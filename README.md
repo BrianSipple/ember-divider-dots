@@ -1,5 +1,7 @@
 # ember-divider-dots
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/BrianSipple/ember-divider-dots.svg?token=975807ed865dd6e4d1f4b6889a780417aa6b4bd91787d3c0d086adf8c1cf081d)](https://greenkeeper.io/)
+
 _A customizable Ember component for rendering SVG section dividers._
 
 ## Installation
