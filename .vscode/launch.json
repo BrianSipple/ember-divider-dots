@@ -34,6 +34,15 @@
     },
     {
       "type": "node",
+      "request": "launch",
+      "name": "Lint:Markdown",
+      "program": "${workspaceRoot}/node_modules/.bin/remark",
+      "args": [
+        "./*.md"
+      ]
+    },
+    {
+      "type": "node",
       "request": "attach",
       "name": "Attach to Process",
       "address": "localhost",
