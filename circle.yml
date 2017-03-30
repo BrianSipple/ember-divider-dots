@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: "stable"
+
+dependencies:
+  pre:
+    - npm install -g bower
+      # Install latest stable Chrome from: https://github.com/chronogolf/circleci-google-chrome
+    - curl -s https://raw.githubusercontent.com/chronogolf/circleci-google-chrome/master/use_chrome_stable_version.sh | bash
+  override:
+    - yarn install
+  cache_directories:
+    - ~/.cache/yarn
+
+test:
+  override:
+    - yarn test
