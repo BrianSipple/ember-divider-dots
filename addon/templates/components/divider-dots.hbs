@@ -1,17 +1,12 @@
-<svg class="ember-divider-dots__inner-dot-container" viewBox="0 0 100 100">
+<svg class="ember-divider-dots__inner-dot-container" viewBox={{viewBox}}>
   {{#if hasBlock}}
 
-    {{yield dots}}
+    {{yield}}
 
   {{else}}
 
-    {{#each dotCoords as |coords|}}
-      {{component dotComponent
-        class="ember-divider-dots__dot"
-        coords=coords
-        size=dotSize
-        radius=dotRadius
-      }}
+    {{#each (range 1 numDots) as |dot|}}
+      {{component dotComponent class="ember-divider-dots__dot" containerComponent=this}}
     {{/each}}
 
   {{/if}}

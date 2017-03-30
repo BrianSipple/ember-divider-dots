@@ -1,4 +1,4 @@
-# ember-divider-dots
+# ember-divider-dots (WIP)
 
 _A customizable Ember component for rendering SVG section dividers._
 
