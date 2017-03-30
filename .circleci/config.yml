@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/ember-divider-dots
+    environment:
+      - CI: true
+    docker:
+      - image: kkarczmarczyk/node-yarn:6.9
+    steps:
+      - checkout
+      - run:
+          name: Install Bower
+          command: yarn add global bower
+      - run:
+          name: Install Latest Chrome Stable
+          command: curl -s https://raw.githubusercontent.com/chronogolf/circleci-google-chrome/master/use_chrome_stable_version.sh | bash
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - run:
+          name: Running Tests
+          command: yarn test
