@@ -1,25 +1,27 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { expect } from 'chai';
+import { describe, it } from 'mocha';
+import { setupComponentTest } from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
+import { find } from 'ember-native-dom-helpers';
 
-moduleForComponent('divider-dots', 'Integration | Component | divider dots', {
-  integration: true
-});
+let expected;
+let actual;
+let message;
 
-test('it renders', function(assert) {
+describe.only('Integration | Component | divider-dots', function() {
+  setupComponentTest('divider-dots', {
+    integration: true
+  });
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  it('default inline rendering', function() {
+    this.render(hbs`{{divider-dots}}`);
 
-  this.render(hbs`{{divider-dots}}`);
+    const dividerDotsElem = find('.ember-divider-dots');
 
-  assert.equal(this.$().text().trim(), '');
+    expected = 4;
+    actual = dividerDotsElem.querySelectorAll('.ember-divider-dots__dot').length;
+    message = `4 "dots" are rendered by default`;
 
-  // Template block usage:
-  this.render(hbs`
-    {{#divider-dots}}
-      template block text
-    {{/divider-dots}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+    expect(actual).to.equal(expected, message);
+  });
 });
