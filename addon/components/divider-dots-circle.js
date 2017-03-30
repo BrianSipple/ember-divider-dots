@@ -3,6 +3,7 @@ import { scheduleOnce } from 'ember-runloop';
 
 export default Component.extend({
   tagName: 'circle',
+  classNames: ['ember-divider-dots__dot'],
   attributeBindings: ['cx', 'cy', 'radius:r'],
 
   containerComponent: null,
@@ -14,7 +15,7 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    scheduleOnce('actions', this, 'registerWithContainerComponent');
+    scheduleOnce('afterRender', this, 'registerWithContainerComponent');
   },
 
   willDestroyElement() {
@@ -24,6 +25,7 @@ export default Component.extend({
   },
 
   registerWithContainerComponent() {
+    debugger;
     this.containerComponent.registerDotComponent(this);
   },
 
