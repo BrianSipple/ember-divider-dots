@@ -69,7 +69,6 @@ ember install ember-divider-dots
     -     type: `String`
     -     default: `center`
 
-
 ## Background
 
 Section dividers are a nice touch for many types of page layouts. However, there are also so many different ways to design them and even more (often-less-than-ideal) ways to implement those designs. 

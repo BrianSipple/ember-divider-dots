@@ -42,6 +42,7 @@
     "ember-load-initializers": "^0.6.0",
     "ember-native-dom-helpers": "^0.3.5",
     "ember-resolver": "^2.0.3",
+    "ember-sinon": "^0.7.0",
     "ember-source": "~2.12.0",
     "ember-welcome-page": "^2.0.2",
     "loader.js": "^4.2.3",
@@ -49,7 +50,8 @@
     "postcss-import": "^9.1.0",
     "remark-cli": "^3.0.0",
     "remark-lint": "^6.0.0",
-    "remark-preset-lint-recommended": "^2.0.0"
+    "remark-preset-lint-recommended": "^2.0.0",
+    "sinon-chai": "^2.9.0"
   },
   "remarkConfig": {
     "plugins": [
