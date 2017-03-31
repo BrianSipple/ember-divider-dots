@@ -1,12 +1,18 @@
 {
   "name": "ember-divider-dots",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A customizable Ember component for rendering SVG section dividers",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember svg",
+    "ember dividers",
+    "svg dividers"
   ],
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Brian Sipple <@Brian_Sipple>",
+    "url": "https://github.com/BrianSipple"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -33,6 +39,7 @@
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-mocha": "^0.13.2",
     "ember-cli-postcss": "^3.2.0",
+    "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-shims": "^1.0.2",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
