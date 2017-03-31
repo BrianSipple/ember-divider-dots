@@ -47,14 +47,43 @@ export default Component.extend({
    */
   containerHeight: '100%',
 
+  /**
+   * Layout direction of the dots (AKA "flow" direction).
+   *
+   * @property direction
+   * @type String
+   * @public
+   * @default 'horizontal'
+   */
   direction: DIRECTION_HORIZONTAL,
 
+  /**
+   * @property measuredContainerWidth
+   * @type Number
+   * @private
+   */
   measuredContainerWidth: null,
+
+  /**
+   * @property measuredContainerHeight
+   * @type Number
+   * @private
+   */
   measuredContainerHeight: null,
 
+  /**
+   * Binding for the SVG `fill` attribute.
+   *
+   * @property fill
+   * @type String
+   * @public
+   * @default 'currentColor'
+   */
   fill: 'currentColor',
 
   /**
+   * The type of SVG to render as a "dot".
+   *
    * @property dotType
    * @type {String}
    * @public
@@ -67,7 +96,7 @@ export default Component.extend({
    * percentage of the dot size.
    *
    * @property gutterSizePct
-   * @type Integer
+   * @type Number
    * @public
    * @default 25
    */
@@ -94,8 +123,7 @@ export default Component.extend({
   numDots: null,
 
   /**
-   * The alignment of each dot along its main axis. Options include
-   * `start`, 'end`, `center`, and `between`.
+   * The alignment of each dot along its main axis.
    *
    * @property justify
    * @type String

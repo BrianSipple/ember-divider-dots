@@ -32,6 +32,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-mocha": "^0.13.2",
+    "ember-cli-postcss": "^3.2.0",
     "ember-cli-shims": "^1.0.2",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
@@ -44,6 +45,8 @@
     "ember-source": "~2.12.0",
     "ember-welcome-page": "^2.0.2",
     "loader.js": "^4.2.3",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-import": "^9.1.0",
     "remark-cli": "^3.0.0",
     "remark-lint": "^6.0.0",
     "remark-preset-lint-recommended": "^2.0.0"
