@@ -19,7 +19,7 @@ let expected;
 let actual;
 let message;
 
-describe.only('Integration | Component | divider-dots', function() {
+describe('Integration | Component | divider-dots', function() {
   setupComponentTest('divider-dots', {
     integration: true
   });
@@ -76,24 +76,7 @@ describe.only('Integration | Component | divider-dots', function() {
       </div>
     `;
 
-    const wideContainerTemplate = hbs`
-      <div style="width: 100%; height: 400px;">
-        {{divider-dots direction=direction dotCrossSizePct=dotCrossSizePct}}
-      </div>
-    `;
-
-    const tallContainerTemplate = hbs`
-      <div style="width: 400px; height: 100%;">
-        {{divider-dots direction=direction dotCrossSizePct=dotCrossSizePct}}
-      </div>
-    `;
-
-    const DEFAULT_WIDTH_WIDE = 1000;
-    const DEFAULT_WIDTH_NARROW = 400;
     const DEFAULT_WIDTH_FIXED = 900;
-
-    const DEFAULT_HEIGHT_WIDE = 400;
-    const DEFAULT_HEIGHT_NARROW = 1000;
     const DEFAULT_HEIGHT_FIXED = 500;
 
     describe('generating a viewBox', function() {

@@ -1,5 +1,5 @@
 import Component from 'ember-component';
-import computed, { readOnly, notEmpty } from 'ember-computed';
+import computed from 'ember-computed';
 import layout from '../templates/components/divider-dots';
 import { assert } from 'ember-metal/utils';
 import { A } from 'ember-array/utils';
