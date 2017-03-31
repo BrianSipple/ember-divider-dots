@@ -12,12 +12,26 @@ ember install ember-divider-dots
 
 ### Container SVG Attributes
 
--   `width`
-    -   A value accepted by the SVG `width` attribute.
-    -   default: 100% (You probably won't want to change this)
+* `containerWidth`
+  - A value accepted by the SVG `width` attribute.
+  - type: `String`
+  - default: `'100%'`
 
--   `height`
-    -   A value accepted by the SVG `width` attribute.
+* `containerHeight`
+  - A value accepted by the SVG `height` attribute.
+  - type: `String`
+  - default: `'100%'`
+
+* `direction`
+  - Layout direction of the dots
+  - type: `String`
+  - options: `horizontal`, `vertical`
+  - default: `horizontal`
+
+* `dotCrossSizePct`
+  - The size of each dot as a percentage of the cross size ("cross size" being the amount of space in the direction opposite the layout direction)
+  - type: `Number`
+  - default: `100`
 
 ### "Dot" SVG Attributes
 -   `dotSize`

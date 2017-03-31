@@ -1,0 +1,26 @@
+
+
+body {
+  background-color: hsla(211, 10%, 47%, 1.00);
+}
+
+.u-mb-md { margin-bottom: 2rem !important; }
+.u-mr-md { margin-right: 2rem !important; }
+
+.content-box {
+  border-width: 0.2rem;
+  border-style: dashed;
+  border-color: aquamarine;
+}
+
+
+.page-section:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.divider-row {
+  width: 100%;
+  height: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
