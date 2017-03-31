@@ -1,11 +1,20 @@
 /* eslint-env node */
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+const cssNext = require('postcss-cssnext');
+const cssImport = require('postcss-import');
 
 module.exports = function(defaults) {
-  var app = new EmberAddon(defaults, {
-    // Add options here
+  const app = new EmberAddon(defaults, {
+    postcssOptions: {
+      compile: {
+        enabled: true,
+        plugins: [
+          { module: cssImport },
+          { module: cssNext }
+        ]
+      }
+    }
   });
-
   /*
     This build file specifies the options for the dummy test app of this
     addon, located in `/tests/dummy`

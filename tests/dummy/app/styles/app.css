@@ -1,11 +1,10 @@
-
+@import "./_variables.css";
+@import "./_utilities.css";
+@import "./_font.css";
 
 body {
   background-color: hsla(211, 10%, 47%, 1.00);
 }
-
-.u-mb-md { margin-bottom: 2rem !important; }
-.u-mr-md { margin-right: 2rem !important; }
 
 .content-box {
   border-width: 0.2rem;
