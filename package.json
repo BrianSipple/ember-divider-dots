@@ -17,7 +17,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/BrianSipple/ember-divider-dots.git",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
