@@ -1,0 +1,21 @@
+.p-homepage .homepage__header {
+  /*background-color: aqua;*/
+  height: 90vh;
+  background-image: linear-gradient(
+    to bottom,
+    var(--theme-color__primary),
+    var(--theme-color__supporting-1)
+  );
+}
+
+.p-homepage .homepage-header__content {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.p-homepage .homepage-header__logo {
+  height: 14rem;
+}

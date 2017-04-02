@@ -1,53 +1,60 @@
-<header>
-  <h1>Ember Divider Dots</h1>
-</header>
+<section class="u-fill p-homepage">
 
-<section class="page-section">
-  <h2>Examples and Usage</h2>
-  <div class="content-box"></div> represents each divider's bounding box.
+  <header class="homepage__header homepage-header">
+    <div class="u-mh-auto homepage-header__content u-fill-height">
+      {{inline-svg "logos/ember-logo" class="homepage-header__logo u-mh-auto u-block u-mb-md"}}
+      {{divider-dots class="u-mb-md g-accent-1" numDots="10" containerHeight="2rem" fill="currentColor"}}
+      <h1 class="g-font-xxl g-accent-1 u-mv-0">Divider Dots</h1>
+    </div>
+  </header>
 
-  <h1>Basic Layout</h1>
+  <section class="page-section">
+    <h2 class="page-heading">Examples and Usage</h2>
+    <div class="content-box"></div> represents each divider's bounding box.
 
-  <h2>Horizontal Dots</h2>
+    <h1 class="page-heading">Basic Layout</h1>
 
-  {{divider-dots class="content-box u-mb-md" numDots=1 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=2 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=3 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=4 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=5 containerHeight="2em"}}
+    <h2 class="page-heading">Horizontal Dots</h2>
 
-  <h2>Vertical Dots</h2>
+    {{divider-dots class="content-box u-mb-md" numDots=1 containerHeight="2em"}}
+    {{divider-dots class="content-box u-mb-md" numDots=2 containerHeight="2em"}}
+    {{divider-dots class="content-box u-mb-md" numDots=3 containerHeight="2em"}}
+    {{divider-dots class="content-box u-mb-md" numDots=4 containerHeight="2em"}}
+    {{divider-dots class="content-box u-mb-md" numDots=5 containerHeight="2em"}}
 
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=5 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=4 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=3 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=2 containerWidth="2em"}}
+    <h2 class="page-heading">Vertical Dots</h2>
 
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=1 containerWidth="2em"}}
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=5 containerWidth="2em"}}
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=4 containerWidth="2em"}}
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=3 containerWidth="2em"}}
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=2 containerWidth="2em"}}
 
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=2 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=3 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=4 containerWidth="2em"}}
-  {{divider-dots class="content-box" direction="vertical" numDots=5 containerWidth="2em"}}
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=1 containerWidth="2em"}}
+
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=2 containerWidth="2em"}}
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=3 containerWidth="2em"}}
+    {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=4 containerWidth="2em"}}
+    {{divider-dots class="content-box" direction="vertical" numDots=5 containerWidth="2em"}}
+
+  </section>
+
+  {{divider-dots class="divider-row" numDots=6}}
+
+  <section class="page-section">
+    <h1 class="page-heading">Justification Types</h1>
+
+    <h2 class="page-heading">Center (default)</h2>
+
+    {{divider-dots class="content-box"}}
+
+    {{divider-dots class="content-box" direction="vertical"}}
+
+  </section>
+
+  {{divider-dots class="divider-row" numDots=6}}
+
+  <section class="page-section">
+    <h1 class="page-heading">Dot Types</h1>
+  </section>
 
 </section>
-
-{{divider-dots class="divider-row" numDots=6}}
-
-<section class="page-section">
-  <h1>Justification Types</h1>
-
-  <h3>Center (default)</h3>
-
-  {{divider-dots class="content-box"}}
-
-  {{divider-dots class="content-box" direction="vertical"}}
-
-</section>
-
-{{divider-dots class="divider-row" numDots=6}}
-
-<section class="page-section">
-  <h1>Dot Types</h1>
-</section>
-

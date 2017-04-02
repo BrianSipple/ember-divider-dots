@@ -1,0 +1,16 @@
+:root {
+  /*--theme-color__primary: hsla(160, 100%, 75%, 1.0);*/
+  /*--theme-color__primary: hsla(289, 100%, 80%, 1.00);*/
+  --theme-color__primary: hsla(193, 100%, 73%, 1.00);
+  /*--theme-color__supporting-1: hsla(289, 100%, 80%, 1.00);*/
+  --theme-color__supporting-1: hsla(160, 100%, 75%, 1.0);
+  /*--theme-color__supporting-2: hsla(193, 100%, 73%, 1.00);*/
+  --theme-color__supporting-2: hsla(289, 100%, 80%, 1.00);
+  --theme-color__accent-1: hsla(43, 54%, 56%, 1.00);
+
+  --color__background: hsla(211, 10%, 47%, 1.00);
+  /*--theme-color__primary--light: */
+  /*--theme-color__primary--lighter: */
+  /*--theme-color__primary--dark: */
+  /*--theme-color__primary--darker: */
+}

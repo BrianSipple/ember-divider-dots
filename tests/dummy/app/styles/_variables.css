@@ -1,5 +1,6 @@
-:root {
+@import "./variables/_colors.css";
 
+:root {
   /*
    * Target the system fonts first (http://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/)
    * then provide similar fallbacks

@@ -1,17 +1,26 @@
 @import "./_variables.css";
-@import "./_utilities.css";
+
 @import "./_font.css";
+@import "./_garnishes.css";
+@import "./_pages.css";
+@import "./_utilities.css";
+
 
 body {
-  background-color: hsla(211, 10%, 47%, 1.00);
+  background-color: var(--color__background);
+  padding: 0;
+  margin: 0;
 }
 
 .content-box {
   border-width: 0.2rem;
   border-style: dashed;
-  border-color: aquamarine;
+  border-color: var(--theme-color__supporting-1);
 }
 
+.page-heading {
+  color: var(--theme-color__primary);
+}
 
 .page-section:not(:last-child) {
   margin-bottom: 2rem;

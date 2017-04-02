@@ -13,6 +13,12 @@ module.exports = function(defaults) {
           { module: cssNext }
         ]
       }
+    },
+
+    svg: {
+      paths: [
+        'tests/dummy/public/assets/inline-svg'
+      ]
     }
   });
   /*
