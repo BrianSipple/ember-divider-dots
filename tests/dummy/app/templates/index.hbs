@@ -2,52 +2,78 @@
   <h1>Ember Divider Dots</h1>
 </header>
 
-<section class="page-section">
-  <h2>Examples and Usage</h2>
-  <div class="content-box"></div> represents each divider's bounding box.
+<section>
+  <header class="page-section">
+    <h1>Examples and Usage</h1>
+    <div class="demo-dots"></div> represents each divider's bounding box.
+  </header>
 
-  <h1>Basic Layout</h1>
+  <section class="page-section">
+    <h2>Basic Layout</h2>
 
-  <h2>Horizontal Dots</h2>
+    <h3>Horizontal Dots</h3>
 
-  {{divider-dots class="content-box u-mb-md" numDots=1 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=2 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=3 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=4 containerHeight="2em"}}
-  {{divider-dots class="content-box u-mb-md" numDots=5 containerHeight="2em"}}
+    <div class="dot-set--horizontal">
+      {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" justify="between"}}
+      {{divider-dots class="demo-dots" numDots=1 containerHeight="2em"}}
+      {{divider-dots class="demo-dots" numDots=2 containerHeight="2em"}}
+      {{divider-dots class="demo-dots" numDots=3 containerHeight="2em"}}
+      {{divider-dots class="demo-dots" numDots=4 containerHeight="2em"}}
+      {{divider-dots class="demo-dots" numDots=5 containerHeight="2em"}}
+    </div>
 
-  <h2>Vertical Dots</h2>
+    <h3>Vertical Dots</h3>
 
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=5 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=4 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=3 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=2 containerWidth="2em"}}
+    <div class="u-text-center dot-set--vertical">
+      {{divider-dots class="demo-dots" direction="vertical" numDots=5 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=4 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=3 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=2 containerWidth="2em"}}
 
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=1 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=1 containerWidth="2em"}}
 
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=2 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=3 containerWidth="2em"}}
-  {{divider-dots class="content-box u-mr-md" direction="vertical" numDots=4 containerWidth="2em"}}
-  {{divider-dots class="content-box" direction="vertical" numDots=5 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=2 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=3 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=4 containerWidth="2em"}}
+      {{divider-dots class="demo-dots" direction="vertical" numDots=5 containerWidth="2em"}}
+    </div>
+  </section>
+
+  {{divider-dots class="divider-row" numDots=6}}
+
+  <section class="page-section">
+    <h2>Justification Types</h2>
+
+    <h3>Center (default)</h3>
+
+    <div class="dot-set--horizontal">
+      {{divider-dots class="demo-dots" containerHeight="2em"}}
+    </div>
+
+    <div class="u-text-center dot-set--vertical">
+      {{divider-dots class="demo-dots" direction="vertical" containerWidth="2em"}}
+    </div>
+
+    {{#each (array 'start' 'end' 'between') as |justification|}}
+      <h3>{{capitalize justification}}</h3>
+
+      <div class="dot-set--horizontal">
+        {{divider-dots class="demo-dots" containerHeight="2em" justify=justification}}
+      </div>
+
+      <div class="u-text-center dot-set--vertical">
+        {{divider-dots class="demo-dots" direction="vertical" containerWidth="2em" justify=justification}}
+      </div>
+    {{/each}}
+
+  </section>
+
+  {{divider-dots class="divider-row" numDots=6}}
+
+  <section class="page-section">
+    <h2>Dot Types</h2>
+  </section>
 
 </section>
 
-{{divider-dots class="divider-row" numDots=6}}
-
-<section class="page-section">
-  <h1>Justification Types</h1>
-
-  <h3>Center (default)</h3>
-
-  {{divider-dots class="content-box"}}
-
-  {{divider-dots class="content-box" direction="vertical"}}
-
-</section>
-
-{{divider-dots class="divider-row" numDots=6}}
-
-<section class="page-section">
-  <h1>Dot Types</h1>
-</section>
 

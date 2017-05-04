@@ -1,10 +1,11 @@
 import Component from 'ember-component';
-import computed from 'ember-computed';
+import computed, { equal } from 'ember-computed';
 import layout from '../templates/components/divider-dots';
 import { assert } from 'ember-metal/utils';
 import { A } from 'ember-array/utils';
 import { scheduleOnce } from 'ember-runloop';
 import { DIRECTION_HORIZONTAL, DIRECTION_VERTICAL } from 'ember-divider-dots/utils/directions';
+import { JUSTIFICATION_BETWEEN, JUSTIFICATION_CENTER, justifications } from 'ember-divider-dots/utils/justification';
 
 export default Component.extend({
   layout,
@@ -130,7 +131,7 @@ export default Component.extend({
    * @public
    * @default 'center'
    */
-  justify: 'center',
+  justify: JUSTIFICATION_CENTER,
 
   init() {
     this._super(...arguments);
@@ -140,8 +141,7 @@ export default Component.extend({
     this.dotCrossSizePct = this.dotCrossSizePct || 100;
     this.gutterSizePct = this.gutterSizePct || 25;
 
-    assert(`divider-dots must have a \`numDots\` property greater than 0`, this.numDots > 0);
-    assert(`divider-dots must have a \`dotCrossSizePct\` property greater than 0`, this.dotCrossSizePct > 0);
+    this._checkInitProperties();
   },
 
   didInsertElement() {
@@ -153,94 +153,107 @@ export default Component.extend({
     scheduleOnce('afterRender', this, '_setDotDisplay');
   },
 
-  dotSize: computed('dotCrossSizePct', 'direction', 'measuredContainerHeight', 'measuredContainerWidth', {
-    get() {
-      const dotCrossSizePct = this.get('dotCrossSizePct');
-      const layoutDirection = this.get('direction');
-      const multiplier = layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredContainerHeight') : this.get('measuredContainerWidth');
+  /**
+   * Take the length opposite the direction of the flow (the "cross size"),
+   * and multiply it by the "dotCrossSizePct"
+   */
+  dotSize: computed('dotCrossSizePct', 'direction', 'measuredContainerHeight', 'measuredContainerWidth', function() {
+    const dotCrossSizePct = this.get('dotCrossSizePct');
+    const layoutDirection = this.get('direction');
+    const multiplier = layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredContainerHeight') : this.get('measuredContainerWidth');
 
-      return (dotCrossSizePct / 100) * multiplier;
-    }
+    return (dotCrossSizePct / 100) * multiplier;
   }).readOnly(),
 
-  dotRadius: computed('dotSize', {
-    get() {
-      return this.get('dotSize') / 2;
-    }
-  }),
+  layoutFlowSpace: computed('direction', 'measuredContainerHeight', 'measuredContainerWidth', function() {
+    const layoutDirection = this.get('direction');
 
-  dotComponent: computed('dotType', {
-    get() {
-      const dotType = this.get('dotType');
-
-      return {
-        circle: 'divider-dots-circle',
-        rect: 'divider-dots-rect'
-      }[(dotType || 'circle').toLowerCase()];
-    }
+    return layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredContainerWidth') : this.get('measuredContainerHeight');
   }).readOnly(),
 
-  dotDistanceApart: computed('numDots', 'contentSize', {
-    get() {
-      return this.get('contentSize') / this.get('numDots');
-    }
-  }),
-
-  contentSize: computed('numDots', 'dotSize', 'gutterSizePct', 'direction', {
-    get() {
-      const numDots = this.get('numDots');
-      const dotSize = this.get('dotSize');
-      const gutterSizePct = this.get('gutterSizePct');
-
-      const marginWidth = (numDots - 1) * gutterSizePct;
-
-      return (numDots * dotSize) + marginWidth;
-    }
+  dotRadius: computed('dotSize', function() {
+    return this.get('dotSize') / 2;
   }).readOnly(),
 
-  layoutFlowSpace: computed('direction', 'measuredContainerHeight', 'measuredContainerWidth', {
-    get() {
-      const layoutDirection = this.get('direction');
+  dotComponent: computed('dotType', function() {
+    const dotType = this.get('dotType');
 
-      return layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredContainerWidth') : this.get('measuredContainerHeight');
-    }
+    return {
+      circle: 'divider-dots-circle',
+      rect: 'divider-dots-rect'
+    }[(dotType || 'circle').toLowerCase()];
   }).readOnly(),
 
-  contentStartCoord: computed('contentSize', 'justify', 'layoutFlowSpace', {
-    get() {
-      const justify = (this.get('justify') || 'center').toLowerCase();
-      const contentSize = this.get('contentSize');
-      const layoutFlowSpace = this.get('layoutFlowSpace');
+  autoSizeGutters: equal('justify', JUSTIFICATION_BETWEEN),
 
-      return {
-        start: 0,
-        end: layoutFlowSpace - contentSize,
-        center: (layoutFlowSpace / 2) - (contentSize / 2),
-        between: 0
-      }[justify];
-    }
+  gutterCount: computed('numDots', function() {
+    return this.get('numDots') - 1;
   }).readOnly(),
 
-  contentEndCoord: computed('contentSize', 'justify', 'layoutFlowSpace', {
-    get() {
-      const justify = (this.get('justify') || 'center').toLowerCase();
-      const contentSize = this.get('contentSize');
-      const layoutFlowSpace = this.get('layoutFlowSpace');
+  /**
+   * The total amount of space OCCUPIED by all dots in the set
+   */
+  dotSpace: computed('numDots', 'dotSize', function() {
+    return this.get('numDots') * this.get('dotSize');
+  }).readOnly(),
 
-      return {
-        start: layoutFlowSpace - contentSize,
-        end: layoutFlowSpace,
-        center: (layoutFlowSpace / 2) + (contentSize / 2),
-        between: layoutFlowSpace
-      }[justify];
+  /**
+   * The amount of space OCCUPIED by a gap between two dots in the set
+   */
+  gutterSize: computed('dotSpace', 'layoutFlowSpace', 'gutterSizePct', 'autoSizeGutters', function() {
+    const dotSize = this.get('dotSize');
+    const dotSpace = this.get('dotSpace');
+    const layoutFlowSpace = this.get('layoutFlowSpace');
+    const gutterCount = this.get('gutterCount');
+    const autoSizeGutters = this.get('autoSizeGutters');
+    const gutterSizePct = this.get('gutterSizePct');
+
+    if (autoSizeGutters) {
+      return (layoutFlowSpace - dotSpace) / gutterCount;
     }
+
+    return dotSize * (gutterSizePct / 100);
+  }).readOnly(),
+
+  /**
+   * The total amount of space OCCUPIED by the gaps between the set's dots
+   */
+  gutterSpace: computed('gutterSize', function() {
+    return this.get('gutterCount') * this.get('gutterSize');
+  }).readOnly(),
+
+  /**
+   * The total amount of space COVERED by the set's dots
+   */
+  contentSpace: computed('dotSpace', 'gutterSpace', function() {
+    const dotSpace = this.get('dotSpace');
+    const gutterSpace = this.get('gutterSpace');
+
+    return dotSpace + gutterSpace;
+  }).readOnly(),
+
+  dotDistanceApart: computed('dotSize', 'gutterSize', function() {
+    return this.get('dotSize') + this.get('gutterSize');
+  }).readOnly(),
+
+  contentStartCoord: computed('contentSpace', function() {
+    const justify = this.get('justify').toLowerCase();
+    const contentSpace = this.get('contentSpace');
+    const layoutFlowSpace = this.get('layoutFlowSpace');
+
+    return {
+      start: 0,
+      end: layoutFlowSpace - contentSpace,
+      center: (layoutFlowSpace / 2) - (contentSpace / 2),
+      between: 0
+    }[justify];
   }).readOnly(),
 
   /**
    * List of coordinate data for each dot -- which can then be
    * passed to its corresponding component.
    */
-  dotCoords: computed('contentStartCoord', 'contentEndCoord', 'dotDistanceApart', {
+  dotCoords: computed('contentStartCoord', 'dotDistanceApart', {
     get() {
       const numDots = this.get('numDots');
       const dotSize = this.get('dotSize');
@@ -265,7 +278,7 @@ export default Component.extend({
         };
       });
     }
-  }),
+  }).readOnly(),
 
   registerDotComponent(dotComponent) {
     this.dotComponents.addObject(dotComponent);
@@ -301,5 +314,15 @@ export default Component.extend({
         radius: dotRadius
       });
     });
+  },
+
+  _checkInitProperties() {
+    const numDotsMessage = `divider-dots must have a \`numDots\` property greater than 0`;
+    const dotCrossSizeMessage = `divider-dots must have a \`dotCrossSizePct\` property greater than 0`;
+    const justifyMessage = `divider-dots must have a \`justify\` property matching either ${justifications.slice(0, -1).join(', ')}, or ${justifications.slice(-1)}`;
+
+    assert(numDotsMessage, this.numDots > 0);
+    assert(dotCrossSizeMessage, this.dotCrossSizePct > 0);
+    assert(justifyMessage, justifications.includes(this.justify));
   }
 });
