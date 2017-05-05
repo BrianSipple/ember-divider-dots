@@ -63,7 +63,7 @@ describe('Integration | Component | divider-dots', function() {
 
       expected = '🎮';
       actual = containerElemInner.textContent.trim();
-      message = `freeform content within the inner container SVG is enabled during block scope`;
+      message = `freeform content within the inner container SVG is enabled during block scope usage`;
 
       expect(actual).to.equal(expected, message);
     });
@@ -92,7 +92,7 @@ describe('Integration | Component | divider-dots', function() {
       });
     });
 
-    describe('Sizing dots and according to layout direction', function() {
+    describe('Sizing dots according to layout direction', function() {
       const crossSizePct = 22;
 
       it(`defaults to sizing dots to fill the full amount of space in the direction opposite its layout \`direction\``, function() {
@@ -140,6 +140,10 @@ describe('Integration | Component | divider-dots', function() {
 
 
   describe('API', function() {
+    describe('justification', function() {
+      it('justifies dots along the center of the container when `center` justification is set', function() {
 
+      });
+    });
   });
 });

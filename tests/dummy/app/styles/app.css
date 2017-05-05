@@ -6,10 +6,22 @@ body {
   background-color: hsla(211, 10%, 47%, 1.00);
 }
 
-.content-box {
+.demo-dots {
   border-width: 0.2rem;
   border-style: dashed;
   border-color: aquamarine;
+}
+
+.dot-set--vertical {
+  height: 20rem;
+}
+
+.dot-set--horizontal .demo-dots:not(:last-child) {
+  margin-bottom: var(--spacing-md);
+}
+
+.dot-set--vertical .demo-dots:not(:last-child) {
+  margin-right: var(--spacing-md);
 }
 
 

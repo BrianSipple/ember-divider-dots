@@ -55,6 +55,9 @@ ember install ember-divider-dots
 
 -   `gutterSizePct`
     -     The size of each gutter (the space between two dots), given as a percentage of the `dotSize`.
+          
+          **Note**: This will have no effect when `justify` is set to `between`, as the gutter space will be automatically distributed.
+
     -     type: `Number`
     -     default: `25`
 
@@ -64,8 +67,8 @@ ember install ember-divider-dots
     -     default: `currentColor`
 
 -   `justify`
-    -     The alignment of each dot along its main axis. (Currently, only `center` is supported.)
-    -     options: `center`  
+    -     The alignment of each dot along its main axis.
+    -     options: `start`, `center`, `end`, `between`
     -     type: `String`
     -     default: `center`
 

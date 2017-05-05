@@ -1,2 +1,3 @@
-.u-mb-md { margin-bottom: 2rem !important; }
-.u-mr-md { margin-right: 2rem !important; }
+@import "./utilities/_display.css";
+@import "./utilities/_spacing.css";
+@import "./utilities/_text.css";
