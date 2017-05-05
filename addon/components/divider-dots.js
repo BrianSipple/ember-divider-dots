@@ -99,7 +99,7 @@ export default Component.extend({
    * @property gutterSizePct
    * @type Number
    * @public
-   * @default 25
+   * @default 125
    */
   gutterSizePct: null,
 
@@ -139,7 +139,7 @@ export default Component.extend({
     this.dotComponents = A();
     this.numDots = this.numDots || 4;
     this.dotCrossSizePct = this.dotCrossSizePct || 100;
-    this.gutterSizePct = this.gutterSizePct || 25;
+    this.gutterSizePct = this.gutterSizePct || 125;
 
     this._checkInitProperties();
   },

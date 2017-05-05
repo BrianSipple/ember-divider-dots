@@ -59,7 +59,7 @@ ember install ember-divider-dots
           **Note**: This will have no effect when `justify` is set to `between`, as the gutter space will be automatically distributed.
 
     -     type: `Number`
-    -     default: `25`
+    -     default: `125`
 
 -   `fill`
     -     Binding for the SVG `fill` attribute.
