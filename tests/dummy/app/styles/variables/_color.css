@@ -1,0 +1,58 @@
+:root {
+
+  /* --------------- THEME COLORS --------------- */
+
+  --theme-color__primary: hsla(120, 73%, 75%, 1);
+
+  --theme-color__primary--light: color(
+    var(--theme-color__primary)
+    tint(20%)
+  );
+
+  --theme-color__supporting-1: hsla(195, 100%, 61%, 1.0);;
+
+  --theme-color__supporting-1--light: color(
+    var(--theme-color__supporting-1)
+    tint(20%)
+  );
+
+  --theme-color__accent-1: hsla(160, 100%, 75%, 1);
+
+  --theme-color__accent-1--lighter: color(
+    var(--theme-color__accent-1)
+    tint(50%)
+  );
+  --theme-color__accent-1--light: color(
+    var(--theme-color__accent-1)
+    tint(20%)
+  );
+  --theme-color__accent-1--dark: color(
+    var(--theme-color__accent-1)
+    shade(20%)
+  );
+  --theme-color__accent-1--darker: color(
+    var(--theme-color__accent-1)
+    shade(50%)
+  );
+
+  --theme-color__page-background: hsla(212, 10%, 35%, 1.0);
+
+
+  /* --------------- GRAYSCALE --------------- */
+
+  --color__gray--100: hsla(228, 15%, 94%, 1.00);
+  --color__gray--300: hsla(231, 12%, 77%, 1.00);
+  --color__gray--500: hsla(231, 9%, 60%, 1.00);
+  --color__gray--700: hsla(230, 8%, 45%, 1.00);
+  --color__gray--900: hsla(231, 10%, 26%, 1.00);
+
+  --color__white: hsla(0, 0%, 100%, 1.00);
+  --color__black: hsla(0, 0%, 0%, 1.00);
+  --color__nearWhite: hsla(0, 0%, 92%, 1.00);
+  --color__nearBlack: hsla(0, 0%, 13%, 1.00);
+
+
+  /* --------------- MISC COMMON COLORS --------------- */
+
+  --color__box-shadow: hsla(0, 0%, 0%, 0.43);
+}
