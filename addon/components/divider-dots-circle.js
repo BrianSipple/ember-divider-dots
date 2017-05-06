@@ -1,40 +1,20 @@
-import Component from 'ember-component';
-import { scheduleOnce } from 'ember-runloop';
+import BaseDot from './_base-dot';
+import set from 'ember-metal/set';
+import { DOT_TYPE_CIRCLE } from 'ember-divider-dots/utils/dot-types';
 
-export default Component.extend({
+export default BaseDot.extend({
   tagName: 'circle',
-  classNames: ['ember-divider-dots-dot'],
   attributeBindings: ['cx', 'cy', 'radius:r'],
 
-  containerComponent: null,
+  'data-test-dot-type': DOT_TYPE_CIRCLE,
+
   cx: undefined,
   cy: undefined,
   radius: undefined,
-  coords: null,
 
-  didInsertElement() {
-    this._super(...arguments);
-
-    scheduleOnce('afterRender', this, 'registerWithContainerComponent');
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-
-    scheduleOnce('actions', this, 'unregisterWithContainerComponent');
-  },
-
-  registerWithContainerComponent() {
-    this.containerComponent.registerDotComponent(this);
-  },
-
-  unregisterWithContainerComponent() {
-    this.containerComponent.unregisterDotComponent(this);
-  },
-
-  setDisplayProperties({ coords: { centerX, centerY }, radius }) {
-    this.set('radius', radius);
-    this.set('cx', centerX);
-    this.set('cy', centerY);
+  setDisplayProperties({ coords: { centerX, centerY }, crossSize }) {
+    set(this, 'radius', crossSize / 2);
+    set(this, 'cx', centerX);
+    set(this, 'cy', centerY);
   }
 });

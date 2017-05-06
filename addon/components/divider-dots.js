@@ -6,6 +6,8 @@ import { A } from 'ember-array/utils';
 import { scheduleOnce } from 'ember-runloop';
 import { DIRECTION_HORIZONTAL, DIRECTION_VERTICAL } from 'ember-divider-dots/utils/directions';
 import { JUSTIFICATION_BETWEEN, JUSTIFICATION_CENTER, justifications } from 'ember-divider-dots/utils/justification';
+import { DOT_TYPE_CIRCLE, DOT_TYPE_SQUARE, dotTypes } from 'ember-divider-dots/utils/dot-types';
+import set from 'ember-metal/set';
 
 export default Component.extend({
   layout,
@@ -90,7 +92,7 @@ export default Component.extend({
    * @public
    * @default 'circle'
    */
-  dotType: 'circle',
+  dotType: DOT_TYPE_CIRCLE,
 
   /**
    * The size of each gutter (the space between two dots), given as a
@@ -179,8 +181,8 @@ export default Component.extend({
     const dotType = this.get('dotType');
 
     return {
-      circle: 'divider-dots-circle',
-      rect: 'divider-dots-rect'
+      [DOT_TYPE_CIRCLE]: 'divider-dots-circle',
+      [DOT_TYPE_SQUARE]: 'divider-dots-square'
     }[(dotType || 'circle').toLowerCase()];
   }).readOnly(),
 
@@ -291,36 +293,36 @@ export default Component.extend({
   _setContainerSizes() {
     const { width: measuredWidth, height: measuredHeight } = this.element.getBoundingClientRect();
 
-    this.set('measuredContainerWidth', measuredWidth);
-    this.set('measuredContainerHeight', measuredHeight);
+    set(this, 'measuredContainerWidth', measuredWidth);
+    set(this, 'measuredContainerHeight', measuredHeight);
   },
 
   _setViewBox() {
     const measuredContainerWidth = this.get('measuredContainerWidth');
     const measuredContainerHeight = this.get('measuredContainerHeight');
 
-    this.set('viewBox', `0 0 ${measuredContainerWidth} ${measuredContainerHeight}`);
+    set(this, 'viewBox', `0 0 ${measuredContainerWidth} ${measuredContainerHeight}`);
   },
 
   _setDotDisplay() {
     const dotCoords = this.get('dotCoords');
     const dotSize = this.get('dotSize');
-    const dotRadius = this.get('dotRadius');
 
     this.dotComponents.forEach((dotComponent, idx) => {
       dotComponent.setDisplayProperties({
         coords: dotCoords[idx],
-        size: dotSize,
-        radius: dotRadius
+        crossSize: dotSize
       });
     });
   },
 
   _checkInitProperties() {
+    const dotTypeMessage = `divider-dots must have a \`dotType\` matching either ${dotTypes.slice(0, -1).join(', ')}, or ${dotTypes.slice(-1)}`;
     const numDotsMessage = `divider-dots must have a \`numDots\` property greater than 0`;
     const dotCrossSizeMessage = `divider-dots must have a \`dotCrossSizePct\` property greater than 0`;
     const justifyMessage = `divider-dots must have a \`justify\` property matching either ${justifications.slice(0, -1).join(', ')}, or ${justifications.slice(-1)}`;
 
+    assert(dotTypeMessage, dotTypes.includes(this.dotType));
     assert(numDotsMessage, this.numDots > 0);
     assert(dotCrossSizeMessage, this.dotCrossSizePct > 0);
     assert(justifyMessage, justifications.includes(this.justify));

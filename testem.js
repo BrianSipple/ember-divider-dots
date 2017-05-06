@@ -7,5 +7,14 @@ module.exports = {
   ],
   "launch_in_dev": [
     "Chrome"
-  ]
+  ],
+  "browser_args": {
+    "Chrome": [
+      // TODO: Investigate headless running (https://github.com/testem/testem/issues/1106)
+      // "--version",
+      // "--headless",
+      // "--disable-gpu",
+      // "--remote-debugging-port=9222"
+    ]
+  }
 };
