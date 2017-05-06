@@ -2,6 +2,7 @@
 
 @import "./_garnishes.css";
 @import "./_typography.css";
+@import "./_ui-components.css";
 @import "./_utilities.css";
 
 html {
@@ -15,8 +16,14 @@ html {
 body {
   margin: 0;
   padding: 0;
+  overflow: auto;
   color: var(--color__nearWhite);
   background-color: var(--theme-color__page-background);
+}
+
+.main-content {
+  max-width: 55rem;
+  overflow: hidden;
 }
 
 .demo-dots-legend {
@@ -26,34 +33,34 @@ body {
 
 .demo-dots {
   color: var(--color__gray--300);
-  border-width: 0.2rem;
+}
+
+.demo-dots.demo-dots--bordered {
+  border-width: 0.15rem;
   border-style: dashed;
   border-color: var(--theme-color__accent-1);
 }
 
-.dot-set {
+.content-section:not(:last-child) {
   margin-bottom: var(--spacing-lg);
 }
 
-.dot-set--vertical {
+.dot-set.dot-set--vertical {
   height: 20rem;
+  overflow: hidden;
 }
 
-.dot-set--horizontal .demo-dots:not(:last-child) {
-  margin-bottom: var(--spacing-md);
+.dot-set.dot-set--horizontal .demo-dots:not(:last-child) {
+  margin-bottom: var(--spacing-sm);
 }
 
-.dot-set--vertical .demo-dots:not(:last-child) {
+.dot-set.dot-set--vertical .demo-dots:not(:last-child) {
   margin-right: var(--spacing-md);
 }
 
 .page-headline {
   font-size: 3.5rem;
   line-height: 1;
-}
-
-.page-section:not(:last-child) {
-  margin-bottom: 2rem;
 }
 
 .demo-page-divider {
@@ -65,4 +72,10 @@ body {
 .section-page-divider {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
+}
+
+.c-snippet-view-toggler .c-snippet-view-toggler__button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

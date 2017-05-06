@@ -1,107 +1,300 @@
-<header class="u-mt-xl">
+<header class="u-mt-lg">
   <h1 class="page-headline u-text-center g-primary u-m-0">Ember Divider Dots</h1>
 </header>
 
-{{divider-dots class="demo-page-divider u-mv-xl" numDots=8 gutterSizePct="300"}}
+{{divider-dots class="demo-page-divider u-mv-lg" numDots=8 gutterSizePct=300}}
 
-<section class="u-ph-lg">
-  <section class="page-section">
-    <h1 class="section-heading g-primary">Description</h1>
+<article class="u-ph-lg">
+  <section class="page-section u-mb-lg">
+    <h1 class="section-heading g-primary">Why?</h1>
 
-    <p class="g-font-larger">
-      A customizable Ember component for rendering SVG section dividers
+    <p>
+      Section divider "dots" are a common design pattern, and they can add a nice touch
+      to long, content-heavy pages. But implementing them is tough.
+    </p>
+
+    <p>
+      There's a wide variety of ways to approach their markup and styling,
+      and if you want to use SVG (good for you!), the calculus for sizing and positioning
+      gets even more involved.
+    </p>
+
+    <p>
+      And so as simple as they seem, divider dots are often overlooked. But no more!
+    </p>
+
+    <p>
+      Ember Divider Dots provides an easy-to-use, easy-to-configure component that generates
+      a line of "dots" as crisp SVGs whereever you choose to place it. Check out usage tips and examples
+      below!
     </p>
   </section>
 
-  <section class="page-section">
+  <section class="page-section u-mb-lg">
     <h1 class="section-heading g-primary">Examples and Usage</h1>
 
-    <div class="demo-dots demo-dots-legend u-mh-auto"></div>
-    <p class="u-text-center g-font-larger">Represents each divider's bounding box.</p>
+    <div class="demo-dots demo-dots-legend demo-dots--bordered u-mh-auto"></div>
+    <p class="u-text-center g-font-larger">
+      <span class="g-font-bold">🔑 TIP:</span>
+      A border like the one above represents each divider's bounding box.
+    </p>
   </section>
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Basic Layout</h2>
 
-    <h3 class="g-primary u-text-center">Horizontal Dots</h3>
+    <section class="content-section">
+      <h4 class="g-primary">Horizontal Dots (default)</h4>
 
-    <div class="dot-set dot-set--horizontal">
-      {{divider-dots class="demo-dots" numDots=1 containerHeight="2em"}}
-      {{divider-dots class="demo-dots" numDots=2 containerHeight="2em"}}
-      {{divider-dots class="demo-dots" numDots=3 containerHeight="2em"}}
-      {{divider-dots class="demo-dots" numDots=4 containerHeight="2em"}}
-      {{divider-dots class="demo-dots" numDots=5 containerHeight="2em"}}
-    </div>
+      <div class="dot-set dot-set--horizontal">
+        {{!-- BEGIN-SNIPPET basic-layout-horizontal-dots --}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=1}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=2 containerHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=3 containerHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=4 containerHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="2em"}}
+        {{!-- END-SNIPPET --}}
+      </div>
 
-    <h3 class="g-primary u-text-center">Vertical Dots</h3>
+      {{snippet-view-toggler class="u-mt-sm" snippetName="basic-layout-horizontal-dots.hbs"}}
+    </section>
 
-    <div class="u-text-center dot-set dot-set--vertical">
-      {{divider-dots class="demo-dots" direction="vertical" numDots=5 containerWidth="2em"}}
-      {{divider-dots class="demo-dots" direction="vertical" numDots=4 containerWidth="2em"}}
-      {{divider-dots class="demo-dots" direction="vertical" numDots=3 containerWidth="2em"}}
-      {{divider-dots class="demo-dots" direction="vertical" numDots=2 containerWidth="2em"}}
+    <section class="content-section">
+      <h4 class="g-primary">Vertical Dots</h4>
 
-      {{divider-dots class="demo-dots" direction="vertical" numDots=1 containerWidth="2em"}}
+      <div class="u-text-center dot-set dot-set--vertical">
+        {{!-- BEGIN-SNIPPET basic-layout-vertical-dots --}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=5 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=4 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=3 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=2 containerWidth="2em"}}
 
-      {{divider-dots class="demo-dots" direction="vertical" numDots=2 containerWidth="2em"}}
-      {{divider-dots class="demo-dots" direction="vertical" numDots=3 containerWidth="2em"}}
-      {{divider-dots class="demo-dots" direction="vertical" numDots=4 containerWidth="2em"}}
-      {{divider-dots class="demo-dots" direction="vertical" numDots=5 containerWidth="2em"}}
-    </div>
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=1 containerWidth="2em"}}
+
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=2 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=3 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=4 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=5 containerWidth="2em"}}
+        {{!-- END-SNIPPET --}}
+      </div>
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="basic-layout-vertical-dots.hbs"}}
+    </section>
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct="300"}}
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Justification Types</h2>
 
-    <h3 class="g-primary u-text-center">Center (default)</h3>
-
-    <div class="dot-set dot-set--horizontal u-mb-md">
-      {{divider-dots class="demo-dots" containerHeight="2em"}}
-    </div>
-
-    <div class="u-text-center dot-set dot-set--vertical">
-      {{divider-dots class="demo-dots" direction="vertical" containerWidth="2em" gutterSizePct=75}}
-    </div>
-
-    {{#each (array 'start' 'end' 'between') as |justification|}}
-      <h3 class="g-primary u-text-center">{{capitalize justification}}</h3>
+    <section class="content-section">
+      <h4 class="g-primary">Center (default)</h4>
 
       <div class="dot-set dot-set--horizontal u-mb-md">
-        {{divider-dots class="demo-dots" containerHeight="2em" justify=justification}}
+        {{divider-dots class="demo-dots demo-dots--bordered" containerHeight="2em" justify="center"}}
       </div>
 
       <div class="u-text-center dot-set dot-set--vertical">
-        {{divider-dots class="demo-dots" direction="vertical" containerWidth="2em" justify=justification gutterSizePct=75}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" gutterSizePct=75 justify="center"}}
       </div>
-    {{/each}}
 
+      {{snippet-view-toggler class="u-mt-sm" snippetName="justification-center.hbs"}}
+    </section>
+
+    {{#each (array 'start' 'end' 'between') as |justification|}}
+      <section class="content-section">
+        <h4 class="g-primary">{{capitalize justification}}</h4>
+
+        <div class="dot-set dot-set--horizontal u-mb-md">
+          {{divider-dots class="demo-dots demo-dots--bordered" containerHeight="2em" justify=justification}}
+        </div>
+
+        <div class="u-text-center dot-set dot-set--vertical">
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" justify=justification gutterSizePct=75}}
+        </div>
+
+        {{snippet-view-toggler class="u-mt-sm" snippetName=(concat "justification-" justification ".hbs")}}
+      </section>
+    {{/each}}
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct="300"}}
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Dot Types</h2>
 
-    <section class="dot-set">
-      <h3 class="g-primary u-text-center">Circles (default)</h3>
+    <section class="content-section">
+      <h4 class="g-primary">Circles (default)</h4>
 
+      {{!-- BEGIN-SNIPPET dot-type-circle --}}
       {{divider-dots class="demo-dots" numDots=5 containerHeight="2em"}}
+      {{!-- END-SNIPPET --}}
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="dot-type-circle.hbs"}}
     </section>
 
-    <section class="dot-set">
-      <h3 class="g-primary u-text-center">Squares</h3>
+    <section class="content-section">
+      <h4 class="g-primary">Squares</h4>
 
+      {{!-- BEGIN-SNIPPET dot-type-square --}}
       {{divider-dots class="demo-dots" dotType="square" numDots=5 containerHeight="2em"}}
+      {{!-- END-SNIPPET --}}
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="dot-type-square.hbs"}}
+    </section>
+  </section>
+
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
+
+  <section class="page-section">
+    <h2 class="section-heading g-primary">SVG Attribute Binding</h2>
+
+    <section class="content-section">
+      <h4 class="g-primary">Custom `fill` Attribute</h4>
+
+      <div class="dot-set dot-set--horizontal">
+        {{!-- BEGIN-SNIPPET fill-attribute --}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" fill="#ffcf00"}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" fill="pink"}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" fill="#4da6e0"}}
+        {{!-- END-SNIPPET --}}
+      </div>
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="fill-attribute.hbs"}}
     </section>
 
-    <section class="dot-set">
-      <h3 class="g-primary u-text-center">Compose Your Own (Coming Soon!)</h3>
+    <section class="content-section">
+      <h4 class="g-primary">`stroke` and `stroke-width`</h4>
+
+      <div class="dot-set dot-set--horizontal">
+        {{!-- BEGIN-SNIPPET stroke-and-stroke-width-attributes --}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" stroke="#ffcf00" crossSizePct="60"}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" stroke="#ffcf00" stroke-width="2px" crossSizePct="60"}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" stroke="#ffcf00" stroke-width="4px" crossSizePct="60"}}
+        {{!-- END-SNIPPET --}}
+      </div>
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="stroke-and-stroke-width-attributes.hbs"}}
+    </section>
+  </section>
+
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
+
+  <section class="page-section">
+    <h2 class="section-heading g-primary">Other Styling Properties</h2>
+
+    <section class="content-section">
+      <h4 class="section-heading g-primary">`gutterSizePct` (default: 125)</h4>
+
+      <p>
+        "Gutter size" focuses on the spacing between two dots. `gutterSizePct` is treated as
+        the percentage of the `dotSize`, and allows you to have fine-grained control over the amount of spacing,
+        regardless of whether or not you know each dot's exact measure.
+      </p>
+
+      <div class="dot-set dot-set--horizontal">
+        {{!-- BEGIN-SNIPPET gutter-size-pct-attribute --}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em"}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gutterSizePct=250}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gutterSizePct=400}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gutterSizePct=100}}
+        {{!-- END-SNIPPET --}}
+      </div>
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="gutter-size-pct-attribute.hbs"}}
+
+    </section>
+
+    <section class="content-section">
+      <h4 class="section-heading g-primary">`crossSizePct`</h4>
+
+      <p>
+        Borrowing from the definition of a <i>cross axis</i>, <i>cross size</i> is considered to be the
+        amount of space in the direction opposite to the layout direction. For example, with a horizontal row
+        of dots, the <i>cross size</i> is the row container's height.
+      </p>
+
+      <p>
+        <code>crossSizePct</code> is treated as a percentage of this size.
+      </p>
+
+      <p>
+        <span class="g-font-bold">🔑 TIP:</span>
+        This can come in handy if you need to create spacing around the dots without affecting the margin or padding
+        of their container.
+      </p>
+
+      <div class="dot-set dot-set--horizontal">
+        {{!-- BEGIN-SNIPPET cross-size-pct-attribute --}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="6em" crossSizePct="23"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="2em" crossSizePct="40"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="4em" crossSizePct="80"}}
+        {{!-- END-SNIPPET --}}
+      </div>
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="cross-size-pct-attribute.hbs"}}
+    </section>
+
+    <section class="content-section">
+      <h4 class="g-primary">Custom `containerWidth` and `containerHeight` Attributes</h4>
+
+      <p>
+        <span class="g-font-bold">🔑 TIP:</span>
+        The default for `containerWidth` and `containerHeight` is 100%, depending on which one represents
+        the cross direction. This means that you can
+        also simply size the divider's root element with CSS, and let the cross size be filled automatically.
+      </p>
+
+      <section class="content-section">
+
+        <div class="dot-set dot-set--horizontal">
+          {{!-- BEGIN-SNIPPET container-height-attribute --}}
+          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="2em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="4em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="8em" crossSizePct="60"}}
+          {{!-- END-SNIPPET --}}
+        </div>
+
+        {{snippet-view-toggler class="u-mt-sm" snippetName="container-height-attribute.hbs"}}
+      </section>
+
+      <section class="content-section">
+        <div class="dot-set dot-set--vertical u-text-center">
+          {{!-- BEGIN-SNIPPET container-width-attribute --}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gutterSizePct=400}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="4em" gutterSizePct=30}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gutterSizePct=400}}
+          {{!-- END-SNIPPET --}}
+        </div>
+
+        {{snippet-view-toggler class="u-mt-sm" snippetName="container-width-attribute.hbs"}}
+      </section>
+    </section>
+
+    <section class="content-section">
+      <h4 class="section-heading g-primary">`numDots` (default: 4)</h4>
+
+      <p>
+        Feel free to compose your divider with as many dots as you want. Ember Divider Dots
+        gives you all the controls you need to make them fit.
+      </p>
+
+      <div class="dot-set dot-set--horizontal">
+        {{!-- BEGIN-SNIPPET num-dots-attribute --}}
+        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gutterSizePct=50 fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" containerHeight="2.5rem" numDots=7}}
+        {{divider-dots class="demo-dots" containerHeight="3rem" justify="between" fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" containerHeight="2.5rem" numDots=7}}
+        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gutterSizePct=50 fill="#4da6e0"}}
+        {{!-- END-SNIPPET --}}
+      </div>
+
+      {{snippet-view-toggler class="u-mt-sm" snippetName="num-dots-attribute.hbs"}}
     </section>
 
   </section>
-
-</section>
+</article>
 
 

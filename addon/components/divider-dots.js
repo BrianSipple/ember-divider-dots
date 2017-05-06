@@ -13,7 +13,14 @@ export default Component.extend({
   layout,
   tagName: 'svg',
   classNames: ['ember-divider-dots-container'],
-  attributeBindings: ['containerWidth:width', 'containerHeight:height', 'xmlns', 'fill'],
+  attributeBindings: [
+    'containerWidth:width',
+    'containerHeight:height',
+    'xmlns',
+    'fill',
+    'stroke',
+    'stroke-width'
+  ],
 
   xmlns: 'http://www.w3.org/2000/svg',
 
@@ -275,8 +282,8 @@ export default Component.extend({
           top,
           right: left + dotSize,
           bottom: top + dotSize,
-          centerX: left + dotRadius,
-          centerY: top + dotRadius
+          centerX: direction === DIRECTION_HORIZONTAL ? left + dotRadius : '50%',
+          centerY: direction === DIRECTION_VERTICAL ? top + dotRadius : '50%'
         };
       });
     }

@@ -6,7 +6,11 @@
   {{else}}
 
     {{#each (range 1 numDots) as |dot|}}
-      {{component dotComponent class="ember-divider-dots-container__dot" containerComponent=this}}
+      {{component
+        dotComponent
+        class="ember-divider-dots-container__dot"
+        containerComponent=this
+      }}
     {{/each}}
 
   {{/if}}

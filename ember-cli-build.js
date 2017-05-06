@@ -13,7 +13,10 @@ module.exports = function(defaults) {
           { module: cssNext }
         ]
       }
-    }
+    },
+
+    snippetPaths: ['tests/dummy/app/snippets'],
+    snippetSearchPaths: ['tests/dummy/app']
   });
   /*
     This build file specifies the options for the dummy test app of this
