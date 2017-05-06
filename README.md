@@ -48,7 +48,7 @@ ember install ember-divider-dots
     -     options: `circle`, `square`
     -     default: `circle`
 
--   `dotCrossSizePct`
+-   `crossSizePct`
     -     The size of each dot as a percentage of the cross size ("cross size" being the amount of space in the direction opposite the layout direction)
     -     type: `Number`
     -     default: `100`

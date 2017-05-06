@@ -108,12 +108,12 @@ export default Component.extend({
   /**
    * The percentage of the height of the viewBox covered by each "dot".
    *
-   * @property dotCrossSizePct
+   * @property crossSizePct
    * @type Integer
    * @public
    * @default 100
    */
-  dotCrossSizePct: null,
+  crossSizePct: null,
 
   /**
    * The number of dots to render as the divider
@@ -140,7 +140,7 @@ export default Component.extend({
 
     this.dotComponents = A();
     this.numDots = this.numDots || 4;
-    this.dotCrossSizePct = this.dotCrossSizePct || 100;
+    this.crossSizePct = this.crossSizePct || 100;
     this.gutterSizePct = this.gutterSizePct || 125;
 
     this._checkInitProperties();
@@ -157,14 +157,14 @@ export default Component.extend({
 
   /**
    * Take the length opposite the direction of the flow (the "cross size"),
-   * and multiply it by the "dotCrossSizePct"
+   * and multiply it by the "crossSizePct"
    */
-  dotSize: computed('dotCrossSizePct', 'direction', 'measuredContainerHeight', 'measuredContainerWidth', function() {
-    const dotCrossSizePct = this.get('dotCrossSizePct');
+  dotSize: computed('crossSizePct', 'direction', 'measuredContainerHeight', 'measuredContainerWidth', function() {
+    const crossSizePct = this.get('crossSizePct');
     const layoutDirection = this.get('direction');
     const multiplier = layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredContainerHeight') : this.get('measuredContainerWidth');
 
-    return (dotCrossSizePct / 100) * multiplier;
+    return (crossSizePct / 100) * multiplier;
   }).readOnly(),
 
   layoutFlowSpace: computed('direction', 'measuredContainerHeight', 'measuredContainerWidth', function() {
@@ -319,12 +319,12 @@ export default Component.extend({
   _checkInitProperties() {
     const dotTypeMessage = `divider-dots must have a \`dotType\` matching either ${dotTypes.slice(0, -1).join(', ')}, or ${dotTypes.slice(-1)}`;
     const numDotsMessage = `divider-dots must have a \`numDots\` property greater than 0`;
-    const dotCrossSizeMessage = `divider-dots must have a \`dotCrossSizePct\` property greater than 0`;
+    const dotCrossSizeMessage = `divider-dots must have a \`crossSizePct\` property greater than 0`;
     const justifyMessage = `divider-dots must have a \`justify\` property matching either ${justifications.slice(0, -1).join(', ')}, or ${justifications.slice(-1)}`;
 
     assert(dotTypeMessage, dotTypes.includes(this.dotType));
     assert(numDotsMessage, this.numDots > 0);
-    assert(dotCrossSizeMessage, this.dotCrossSizePct > 0);
+    assert(dotCrossSizeMessage, this.crossSizePct > 0);
     assert(justifyMessage, justifications.includes(this.justify));
   }
 });
