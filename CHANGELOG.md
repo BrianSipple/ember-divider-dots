@@ -1,3 +1,9 @@
+# May 6, 2017 &mdash; 0.0.3
+
+-   **[FEATURE]** Support for `square` dot type ([#10](https://github.com/BrianSipple/ember-divider-dots/pull/10))
+-   **[FEATURE]** Support for multiple `justify` settings ([#8](https://github.com/BrianSipple/ember-divider-dots/pull/8))
+
+
 # April 2, 2017 &mdash; 0.0.2
 
 -   **[PATCH]** Add Github repo link to `package.json`.
