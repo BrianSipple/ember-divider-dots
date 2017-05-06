@@ -7,7 +7,7 @@ import sinon from 'sinon';
 
 let dotsContainerComponent;
 
-describe('Integration | Component | divider-dots-circle', function() {
+describe('Integration | Component | base-dot', function() {
   setupComponentTest('divider-dots-circle', {
     integration: true,
   });

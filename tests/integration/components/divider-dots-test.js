@@ -4,11 +4,19 @@ import { setupComponentTest } from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
 import { find, findAll } from 'ember-native-dom-helpers';
 import { DIRECTION_HORIZONTAL, DIRECTION_VERTICAL } from 'ember-divider-dots/utils/directions';
+import { DOT_TYPE_CIRCLE, DOT_TYPE_SQUARE } from 'ember-divider-dots/utils/dot-types';
+import testSelector from 'ember-test-selectors';
 
-const SELECTORS = {
+const DOM_SELECTORS = {
   CONTAINER_SVG_OUTER: '.ember-divider-dots-container',
   CONTAINER_SVG_INNER: '.ember-divider-dots-container__inner',
   DOT_SVG: '.ember-divider-dots-container__dot',
+  CIRCLE_DOT: '.ember-divider-dots-dot--circle',
+  SQUARE_DOT: '.ember-divider-dots-container__dot'
+};
+
+const TEST_SELECTORS = {
+  DOT_TYPE: 'dot-type'
 };
 
 function getBBoxAttrForDots(dotElems, attrName) {
@@ -28,7 +36,7 @@ describe('Integration | Component | divider-dots', function() {
     it('renders an inner SVG as a first child', function() {
       this.render(hbs`{{divider-dots}}`);
 
-      const containerElemOuter = find(SELECTORS.CONTAINER_SVG_OUTER);
+      const containerElemOuter = find(DOM_SELECTORS.CONTAINER_SVG_OUTER);
       const containerElemInner = containerElemOuter.firstElementChild;
 
       expected = true;
@@ -41,10 +49,10 @@ describe('Integration | Component | divider-dots', function() {
     it(`renders "dots" by default inside of its inner SVG`, function() {
       this.render(hbs`{{divider-dots}}`);
 
-      const containerElemOuter = find(SELECTORS.CONTAINER_SVG_OUTER);
+      const containerElemOuter = find(DOM_SELECTORS.CONTAINER_SVG_OUTER);
 
       expected = 4;
-      actual = containerElemOuter.querySelectorAll(SELECTORS.DOT_SVG).length;
+      actual = containerElemOuter.querySelectorAll(DOM_SELECTORS.DOT_SVG).length;
       message = `4 dots are rendered by default`;
 
       expect(actual).to.equal(expected, message);
@@ -59,7 +67,7 @@ describe('Integration | Component | divider-dots', function() {
 
       this.render(template);
 
-      const containerElemInner = find(SELECTORS.CONTAINER_SVG_INNER);
+      const containerElemInner = find(DOM_SELECTORS.CONTAINER_SVG_INNER);
 
       expected = '🎮';
       actual = containerElemInner.textContent.trim();
@@ -83,7 +91,7 @@ describe('Integration | Component | divider-dots', function() {
       it('generates a viewBox for its inner SVG based upon the width and height of its container', function() {
         this.render(fixedContainerTemplate);
 
-        const containerElemInner = find(SELECTORS.CONTAINER_SVG_INNER);
+        const containerElemInner = find(DOM_SELECTORS.CONTAINER_SVG_INNER);
 
         expected = `0 0 ${DEFAULT_WIDTH_FIXED} ${DEFAULT_HEIGHT_FIXED}`;
         actual = containerElemInner.getAttribute('viewBox');
@@ -101,7 +109,7 @@ describe('Integration | Component | divider-dots', function() {
 
         this.render(fixedContainerTemplate);
 
-        const dotElems = [...findAll(SELECTORS.DOT_SVG)];
+        const dotElems = [...findAll(DOM_SELECTORS.DOT_SVG)];
         const dotElemHeights = getBBoxAttrForDots(dotElems, 'height');
         const expectedHeights = dotElems.map(() => DEFAULT_HEIGHT_FIXED);
 
@@ -114,7 +122,7 @@ describe('Integration | Component | divider-dots', function() {
 
         this.render(fixedContainerTemplate);
 
-        const dotElems = [...findAll(SELECTORS.DOT_SVG)];
+        const dotElems = [...findAll(DOM_SELECTORS.DOT_SVG)];
         const dotElemHeights = getBBoxAttrForDots(dotElems, 'height');
         const expectedHeight = DEFAULT_HEIGHT_FIXED * (crossSizePct / 100);
         const expectedHeights = dotElems.map(() => expectedHeight);
@@ -128,7 +136,7 @@ describe('Integration | Component | divider-dots', function() {
 
         this.render(fixedContainerTemplate);
 
-        const dotElems = [...findAll(SELECTORS.DOT_SVG)];
+        const dotElems = [...findAll(DOM_SELECTORS.DOT_SVG)];
         const dotElemWidths = getBBoxAttrForDots(dotElems, 'width');
         const expectedWidth = DEFAULT_WIDTH_FIXED * (crossSizePct / 100);
         const expectedWidths = dotElems.map(() => expectedWidth);
@@ -140,9 +148,36 @@ describe('Integration | Component | divider-dots', function() {
 
 
   describe('API', function() {
+    const template = hbs`{{divider-dots dotType=dotType numDots=numDots}}`;
+
     describe('justification', function() {
       it('justifies dots along the center of the container when `center` justification is set', function() {
+      });
+    });
 
+    describe('dotType', function() {
+      const NUM_DOTS = 5;
+
+      beforeEach(function() {
+        this.set('numDots', NUM_DOTS);
+      });
+
+      it(`uses \`divider-dots-circle\` components as "dots" when a \`dotType\` of \`${DOT_TYPE_CIRCLE}\` is set`, function() {
+        this.set('dotType', DOT_TYPE_CIRCLE);
+        this.render(template);
+
+        const dotSetElem = find(DOM_SELECTORS.CONTAINER_SVG_OUTER);
+
+        expect(findAll(testSelector(TEST_SELECTORS.DOT_TYPE, 'circle'), dotSetElem).length).to.equal(NUM_DOTS);
+      });
+
+      it(`uses \`divider-dots-square\` components as "dots" when a \`dotType\` of \`${DOT_TYPE_SQUARE}\` is set`, function() {
+        this.set('dotType', DOT_TYPE_SQUARE);
+        this.render(template);
+
+        const dotSetElem = find(DOM_SELECTORS.CONTAINER_SVG_OUTER);
+
+        expect(findAll(testSelector(TEST_SELECTORS.DOT_TYPE, 'square'), dotSetElem).length).to.equal(NUM_DOTS);
       });
     });
   });

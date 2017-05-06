@@ -43,9 +43,9 @@ ember install ember-divider-dots
     -     default: `horizontal`
 
 -   `dotType`
-    -     The type of SVG to render as a "dot". (Currently, only "circle" is supported).
+    -     The type of SVG to render as a "dot" (see the [demo page] for visual representations).
     -     type: `String`
-    -     options: `circle`
+    -     options: `circle`, `square`
     -     default: `circle`
 
 -   `dotCrossSizePct`
@@ -79,25 +79,31 @@ Section dividers are a nice touch for many types of page layouts. However, there
 
 ## Contributing
 
-### Setup
+### Dot Type Requests
+
+If you have a request for a new dot type, please feel free to [open up an issue](https://github.com/BrianSipple/ember-divider-dots.git/issues) for it.
+
+### Developing 
+
+#### Setup
 
 -   `git clone <repository-url>` this repository
 -   `cd ember-divider-dots`
 -   `npm install`
 -   `bower install`
 
-### Running
+#### Running
 
 -   `ember serve`
 -   Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Running Tests
+#### Running Tests
 
 -   `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 -   `ember test`
 -   `ember test --server`
 
-## Building
+#### Building
 
 -   `ember build`
 
