@@ -80,7 +80,7 @@ describe('Integration | Component | divider-dots', function() {
   describe('core functionality', function() {
     const fixedContainerTemplate = hbs`
       <div style="width: 900px; height: 500px;">
-        {{divider-dots direction=direction dotCrossSizePct=dotCrossSizePct}}
+        {{divider-dots direction=direction crossSizePct=crossSizePct}}
       </div>
     `;
 
@@ -105,7 +105,7 @@ describe('Integration | Component | divider-dots', function() {
 
       it(`defaults to sizing dots to fill the full amount of space in the direction opposite its layout \`direction\``, function() {
         this.set('direction', DIRECTION_HORIZONTAL);
-        this.set('dotCrossSizePct', undefined);
+        this.set('crossSizePct', undefined);
 
         this.render(fixedContainerTemplate);
 
@@ -118,7 +118,7 @@ describe('Integration | Component | divider-dots', function() {
 
       it(`lays out dots horizontally and computes their height when \`direction\` is equal to \`${DIRECTION_HORIZONTAL}\``, function() {
         this.set('direction', DIRECTION_HORIZONTAL);
-        this.set('dotCrossSizePct', crossSizePct);
+        this.set('crossSizePct', crossSizePct);
 
         this.render(fixedContainerTemplate);
 
@@ -132,7 +132,7 @@ describe('Integration | Component | divider-dots', function() {
 
       it(`lays out dots vertically and computes their width when \`direction\` is equal to \`${DIRECTION_VERTICAL}\``, function() {
         this.set('direction', DIRECTION_VERTICAL);
-        this.set('dotCrossSizePct', crossSizePct);
+        this.set('crossSizePct', crossSizePct);
 
         this.render(fixedContainerTemplate);
 
