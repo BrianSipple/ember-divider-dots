@@ -1,3 +1,8 @@
+# May 7, 2017 &mdash; 0.0.4
+
+-   **[FEATURE]** Support for `fill`, `stroke`, & `stroke-width` attribute binding ([#14](https://github.com/BrianSipple/ember-divider-dots/pull/14))
+
+
 # May 6, 2017 &mdash; 0.0.3
 
 -   **[FEATURE]** Support for `square` dot type ([#10](https://github.com/BrianSipple/ember-divider-dots/pull/10))
