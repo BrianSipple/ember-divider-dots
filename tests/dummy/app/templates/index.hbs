@@ -2,7 +2,7 @@
   <h1 class="page-headline u-text-center g-primary u-m-0">Ember Divider Dots</h1>
 </header>
 
-{{divider-dots class="demo-page-divider u-mv-lg" numDots=8 gutterSizePct=300}}
+{{divider-dots class="demo-page-divider u-mv-lg" numDots=8 gapSizePct=300}}
 
 <article class="u-ph-lg">
   <section class="page-section u-mb-lg">
@@ -82,7 +82,7 @@
     </section>
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Justification Types</h2>
@@ -95,7 +95,7 @@
       </div>
 
       <div class="u-text-center dot-set dot-set--vertical">
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" gutterSizePct=75 justify="center"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" gapSizePct=75 justify="center"}}
       </div>
 
       {{snippet-view-toggler class="u-mt-sm" snippetName="justification-center.hbs"}}
@@ -110,7 +110,7 @@
         </div>
 
         <div class="u-text-center dot-set dot-set--vertical">
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" justify=justification gutterSizePct=75}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" justify=justification gapSizePct=75}}
         </div>
 
         {{snippet-view-toggler class="u-mt-sm" snippetName=(concat "justification-" justification ".hbs")}}
@@ -118,7 +118,7 @@
     {{/each}}
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Dot Types</h2>
@@ -144,7 +144,7 @@
     </section>
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">SVG Attribute Binding</h2>
@@ -178,16 +178,16 @@
     </section>
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gutterSizePct=300}}
+  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Other Styling Properties</h2>
 
     <section class="content-section">
-      <h4 class="section-heading g-primary">`gutterSizePct` (default: 125)</h4>
+      <h4 class="section-heading g-primary">`gapSizePct` (default: 125)</h4>
 
       <p>
-        "Gutter size" focuses on the spacing between two dots. `gutterSizePct` is treated as
+        "Gap size" focuses on the spacing between two dots. <code>gapSizePct</code> is treated as
         the percentage of the `dotSize`, and allows you to have fine-grained control over the amount of spacing,
         regardless of whether or not you know each dot's exact measure.
       </p>
@@ -195,9 +195,9 @@
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET gutter-size-pct-attribute --}}
         {{divider-dots class="demo-dots" numDots=5 containerHeight="2em"}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gutterSizePct=250}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gutterSizePct=400}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gutterSizePct=100}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gapSizePct=250}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gapSizePct=400}}
+        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gapSizePct=100}}
         {{!-- END-SNIPPET --}}
       </div>
 
@@ -240,7 +240,7 @@
 
       <p>
         <span class="g-font-bold">🔑 TIP:</span>
-        The default for `containerWidth` and `containerHeight` is 100%, depending on which one represents
+        The default for <code>containerWidth</code> and <code>containerHeight</code> is 100%, depending on which one represents
         the cross direction. This means that you can
         also simply size the divider's root element with CSS, and let the cross size be filled automatically.
       </p>
@@ -261,11 +261,11 @@
       <section class="content-section">
         <div class="dot-set dot-set--vertical u-text-center">
           {{!-- BEGIN-SNIPPET container-width-attribute --}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gutterSizePct=400}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gapSizePct=400}}
           {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em"}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="4em" gutterSizePct=30}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="4em" gapSizePct=30}}
           {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em"}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gutterSizePct=400}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gapSizePct=400}}
           {{!-- END-SNIPPET --}}
         </div>
 
@@ -283,11 +283,11 @@
 
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET num-dots-attribute --}}
-        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gutterSizePct=50 fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gapSizePct=50 fill="#4da6e0"}}
         {{divider-dots class="demo-dots" containerHeight="2.5rem" numDots=7}}
         {{divider-dots class="demo-dots" containerHeight="3rem" justify="between" fill="#4da6e0"}}
         {{divider-dots class="demo-dots" containerHeight="2.5rem" numDots=7}}
-        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gutterSizePct=50 fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gapSizePct=50 fill="#4da6e0"}}
         {{!-- END-SNIPPET --}}
       </div>
 

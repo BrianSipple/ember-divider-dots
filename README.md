@@ -53,7 +53,7 @@ ember install ember-divider-dots
     -     type: `Number`
     -     default: `100`
 
--   `gutterSizePct`
+-   `gapSizePct`
     -     The size of each gutter (the space between two dots), given as a percentage of the `dotSize`.
           
           **Note**: This will have no effect when `justify` is set to `between`, as the gutter space will be automatically distributed.

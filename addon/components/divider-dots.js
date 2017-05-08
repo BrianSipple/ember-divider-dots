@@ -105,12 +105,12 @@ export default Component.extend({
    * The size of each gutter (the space between two dots), given as a
    * percentage of the dot size.
    *
-   * @property gutterSizePct
+   * @property gapSizePct
    * @type Number
    * @public
    * @default 125
    */
-  gutterSizePct: null,
+  gapSizePct: null,
 
   /**
    * The percentage of the height of the viewBox covered by each "dot".
@@ -148,7 +148,7 @@ export default Component.extend({
     this.dotComponents = A();
     this.numDots = this.numDots || 4;
     this.crossSizePct = this.crossSizePct || 100;
-    this.gutterSizePct = this.gutterSizePct || 125;
+    this.gapSizePct = this.gapSizePct || 125;
 
     this._checkInitProperties();
   },
@@ -209,19 +209,19 @@ export default Component.extend({
   /**
    * The amount of space OCCUPIED by a gap between two dots in the set
    */
-  gutterSize: computed('dotSpace', 'layoutFlowSpace', 'gutterSizePct', 'autoSizeGutters', function() {
+  gutterSize: computed('dotSpace', 'layoutFlowSpace', 'gapSizePct', 'autoSizeGutters', function() {
     const dotSize = this.get('dotSize');
     const dotSpace = this.get('dotSpace');
     const layoutFlowSpace = this.get('layoutFlowSpace');
     const gutterCount = this.get('gutterCount');
     const autoSizeGutters = this.get('autoSizeGutters');
-    const gutterSizePct = this.get('gutterSizePct');
+    const gapSizePct = this.get('gapSizePct');
 
     if (autoSizeGutters) {
       return (layoutFlowSpace - dotSpace) / gutterCount;
     }
 
-    return dotSize * (gutterSizePct / 100);
+    return dotSize * (gapSizePct / 100);
   }).readOnly(),
 
   /**
