@@ -1,0 +1,10 @@
+.c-code-text {
+  color: var(--theme-color__primary);
+  background-color: color(
+    var(--theme-color__primary--light)
+    a(25%)
+  );
+  padding: .125rem .25rem;
+  font-size: smaller;
+  border-radius: 0.125em;
+}
