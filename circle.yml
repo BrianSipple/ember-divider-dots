@@ -4,9 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - npm install -g bower
-
-      # Install latest stable Chrome from: https://github.com/chronogolf/circleci-google-chrome
+    # Install latest stable Chrome from: https://github.com/chronogolf/circleci-google-chrome
     - curl -s https://raw.githubusercontent.com/chronogolf/circleci-google-chrome/master/use_chrome_stable_version.sh | bash
 
   override:
@@ -17,4 +15,7 @@ dependencies:
 
 test:
   override:
-    - yarn test
+    - yarn run test:ci:coverage
+    - yarn add codeclimate-test-reporter
+    - cat coverage/lcov.info | node_modules/.bin/codeclimate-test-reporter
+
