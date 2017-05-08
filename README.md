@@ -26,12 +26,12 @@ ember install ember-divider-dots
     -     type: `Integer`
     -     default: `4`
 
--   `containerWidth`
+-   `lineWidth`
     -     A value accepted by the SVG `width` attribute.
     -     type: `String`
     -     default: `'100%'`
 
--   `containerHeight`
+-   `lineHeight`
     -     A value accepted by the SVG `height` attribute.
     -     type: `String`
     -     default: `'100%'`

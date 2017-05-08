@@ -14,8 +14,8 @@ export default Component.extend({
   tagName: 'svg',
   classNames: ['ember-divider-dots-container'],
   attributeBindings: [
-    'containerWidth:width',
-    'containerHeight:height',
+    'lineWidth:width',
+    'lineHeight:height',
     'xmlns',
     'fill',
     'stroke',
@@ -39,23 +39,23 @@ export default Component.extend({
    * Width of the outer (containing) SVG that our inner SVG will responsively
    * scale to fill.
    *
-   * @property containerWidth
+   * @property lineWidth
    * @type Number|String
    * @public
    * @default '100%'
    */
-  containerWidth: '100%',
+  lineWidth: '100%',
 
   /**
    * Height of the outer (containing) SVG that our inner SVG will responsively
    * scale to fill.
    *
-   * @property containerHeight
+   * @property lineHeight
    * @type Number|String
    * @public
    * @default '100%'
    */
-  containerHeight: '100%',
+  lineHeight: '100%',
 
   /**
    * Layout direction of the dots (AKA "flow" direction).
@@ -68,18 +68,18 @@ export default Component.extend({
   direction: DIRECTION_HORIZONTAL,
 
   /**
-   * @property measuredContainerWidth
+   * @property measuredlineWidth
    * @type Number
    * @private
    */
-  measuredContainerWidth: null,
+  measuredlineWidth: null,
 
   /**
-   * @property measuredContainerHeight
+   * @property measuredlineHeight
    * @type Number
    * @private
    */
-  measuredContainerHeight: null,
+  measuredlineHeight: null,
 
   /**
    * Binding for the SVG `fill` attribute.
@@ -166,18 +166,18 @@ export default Component.extend({
    * Take the length opposite the direction of the flow (the "cross size"),
    * and multiply it by the "crossSizePct"
    */
-  dotSize: computed('crossSizePct', 'direction', 'measuredContainerHeight', 'measuredContainerWidth', function() {
+  dotSize: computed('crossSizePct', 'direction', 'measuredlineHeight', 'measuredlineWidth', function() {
     const crossSizePct = this.get('crossSizePct');
     const layoutDirection = this.get('direction');
-    const multiplier = layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredContainerHeight') : this.get('measuredContainerWidth');
+    const multiplier = layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredlineHeight') : this.get('measuredlineWidth');
 
     return (crossSizePct / 100) * multiplier;
   }).readOnly(),
 
-  layoutFlowSpace: computed('direction', 'measuredContainerHeight', 'measuredContainerWidth', function() {
+  layoutFlowSpace: computed('direction', 'measuredlineHeight', 'measuredlineWidth', function() {
     const layoutDirection = this.get('direction');
 
-    return layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredContainerWidth') : this.get('measuredContainerHeight');
+    return layoutDirection === DIRECTION_HORIZONTAL ? this.get('measuredlineWidth') : this.get('measuredlineHeight');
   }).readOnly(),
 
   dotRadius: computed('dotSize', function() {
@@ -300,15 +300,15 @@ export default Component.extend({
   _setContainerSizes() {
     const { width: measuredWidth, height: measuredHeight } = this.element.getBoundingClientRect();
 
-    set(this, 'measuredContainerWidth', measuredWidth);
-    set(this, 'measuredContainerHeight', measuredHeight);
+    set(this, 'measuredlineWidth', measuredWidth);
+    set(this, 'measuredlineHeight', measuredHeight);
   },
 
   _setViewBox() {
-    const measuredContainerWidth = this.get('measuredContainerWidth');
-    const measuredContainerHeight = this.get('measuredContainerHeight');
+    const measuredlineWidth = this.get('measuredlineWidth');
+    const measuredlineHeight = this.get('measuredlineHeight');
 
-    set(this, 'viewBox', `0 0 ${measuredContainerWidth} ${measuredContainerHeight}`);
+    set(this, 'viewBox', `0 0 ${measuredlineWidth} ${measuredlineHeight}`);
   },
 
   _setDotDisplay() {

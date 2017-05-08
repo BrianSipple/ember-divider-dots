@@ -48,11 +48,11 @@
 
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET basic-layout-horizontal-dots --}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=1}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=2 containerHeight="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=3 containerHeight="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=4 containerHeight="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=1 lineHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=2 lineHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=3 lineHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=4 lineHeight="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="2em"}}
         {{!-- END-SNIPPET --}}
       </div>
 
@@ -64,17 +64,17 @@
 
       <div class="u-text-center dot-set dot-set--vertical">
         {{!-- BEGIN-SNIPPET basic-layout-vertical-dots --}}
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=5 containerWidth="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=4 containerWidth="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=3 containerWidth="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=2 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=5 lineWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=4 lineWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=3 lineWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=2 lineWidth="2em"}}
 
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=1 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=1 lineWidth="2em"}}
 
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=2 containerWidth="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=3 containerWidth="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=4 containerWidth="2em"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=5 containerWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=2 lineWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=3 lineWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=4 lineWidth="2em"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" numDots=5 lineWidth="2em"}}
         {{!-- END-SNIPPET --}}
       </div>
 
@@ -91,11 +91,11 @@
       <h4 class="g-primary">Center (default)</h4>
 
       <div class="dot-set dot-set--horizontal u-mb-md">
-        {{divider-dots class="demo-dots demo-dots--bordered" containerHeight="2em" justify="center"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" lineHeight="2em" justify="center"}}
       </div>
 
       <div class="u-text-center dot-set dot-set--vertical">
-        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" gapSizePct=75 justify="center"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em" gapSizePct=75 justify="center"}}
       </div>
 
       {{snippet-view-toggler class="u-mt-sm" snippetName="justification-center.hbs"}}
@@ -106,11 +106,11 @@
         <h4 class="g-primary">{{capitalize justification}}</h4>
 
         <div class="dot-set dot-set--horizontal u-mb-md">
-          {{divider-dots class="demo-dots demo-dots--bordered" containerHeight="2em" justify=justification}}
+          {{divider-dots class="demo-dots demo-dots--bordered" lineHeight="2em" justify=justification}}
         </div>
 
         <div class="u-text-center dot-set dot-set--vertical">
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" justify=justification gapSizePct=75}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em" justify=justification gapSizePct=75}}
         </div>
 
         {{snippet-view-toggler class="u-mt-sm" snippetName=(concat "justification-" justification ".hbs")}}
@@ -127,7 +127,7 @@
       <h4 class="g-primary">Circles (default)</h4>
 
       {{!-- BEGIN-SNIPPET dot-type-circle --}}
-      {{divider-dots class="demo-dots" numDots=5 containerHeight="2em"}}
+      {{divider-dots class="demo-dots" numDots=5 lineHeight="2em"}}
       {{!-- END-SNIPPET --}}
 
       {{snippet-view-toggler class="u-mt-sm" snippetName="dot-type-circle.hbs"}}
@@ -137,7 +137,7 @@
       <h4 class="g-primary">Squares</h4>
 
       {{!-- BEGIN-SNIPPET dot-type-square --}}
-      {{divider-dots class="demo-dots" dotType="square" numDots=5 containerHeight="2em"}}
+      {{divider-dots class="demo-dots" dotType="square" numDots=5 lineHeight="2em"}}
       {{!-- END-SNIPPET --}}
 
       {{snippet-view-toggler class="u-mt-sm" snippetName="dot-type-square.hbs"}}
@@ -154,9 +154,9 @@
 
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET fill-attribute --}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" fill="#ffcf00"}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" fill="pink"}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" fill="#ffcf00"}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" fill="pink"}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" fill="#4da6e0"}}
         {{!-- END-SNIPPET --}}
       </div>
 
@@ -168,9 +168,9 @@
 
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET stroke-and-stroke-width-attributes --}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" stroke="#ffcf00" crossSizePct="60"}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" stroke="#ffcf00" stroke-width="2px" crossSizePct="60"}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" stroke="#ffcf00" stroke-width="4px" crossSizePct="60"}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" stroke="#ffcf00" crossSizePct="60"}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" stroke="#ffcf00" stroke-width="2px" crossSizePct="60"}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" stroke="#ffcf00" stroke-width="4px" crossSizePct="60"}}
         {{!-- END-SNIPPET --}}
       </div>
 
@@ -194,10 +194,10 @@
 
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET gutter-size-pct-attribute --}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em"}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gapSizePct=250}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gapSizePct=400}}
-        {{divider-dots class="demo-dots" numDots=5 containerHeight="2em" gapSizePct=100}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em"}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" gapSizePct=250}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" gapSizePct=400}}
+        {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" gapSizePct=100}}
         {{!-- END-SNIPPET --}}
       </div>
 
@@ -226,9 +226,9 @@
 
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET cross-size-pct-attribute --}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="6em" crossSizePct="23"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="2em" crossSizePct="40"}}
-        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="4em" crossSizePct="80"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="6em" crossSizePct="23"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="2em" crossSizePct="40"}}
+        {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="4em" crossSizePct="80"}}
         {{!-- END-SNIPPET --}}
       </div>
 
@@ -236,11 +236,11 @@
     </section>
 
     <section class="content-section">
-      <h4 class="g-primary">Custom `containerWidth` and `containerHeight` Attributes</h4>
+      <h4 class="g-primary">`lineWidth` and `lineHeight`</h4>
 
       <p>
         <span class="g-font-bold">🔑 TIP:</span>
-        The default for <code>containerWidth</code> and <code>containerHeight</code> is 100%, depending on which one represents
+        The default for <code>lineWidth</code> and <code>lineHeight</code> is 100%, depending on which one represents
         the cross direction. This means that you can
         also simply size the divider's root element with CSS, and let the cross size be filled automatically.
       </p>
@@ -248,28 +248,28 @@
       <section class="content-section">
 
         <div class="dot-set dot-set--horizontal">
-          {{!-- BEGIN-SNIPPET container-height-attribute --}}
-          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="2em"}}
-          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="4em"}}
-          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 containerHeight="8em" crossSizePct="60"}}
+          {{!-- BEGIN-SNIPPET line-height-attribute --}}
+          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="2em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="4em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="8em" crossSizePct="60"}}
           {{!-- END-SNIPPET --}}
         </div>
 
-        {{snippet-view-toggler class="u-mt-sm" snippetName="container-height-attribute.hbs"}}
+        {{snippet-view-toggler class="u-mt-sm" snippetName="line-height-attribute.hbs"}}
       </section>
 
       <section class="content-section">
         <div class="dot-set dot-set--vertical u-text-center">
-          {{!-- BEGIN-SNIPPET container-width-attribute --}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gapSizePct=400}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em"}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="4em" gapSizePct=30}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em"}}
-          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" containerWidth="2em" crossSizePct=50 gapSizePct=400}}
+          {{!-- BEGIN-SNIPPET line-width-attribute --}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em" crossSizePct=50 gapSizePct=400}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="4em" gapSizePct=30}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em"}}
+          {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em" crossSizePct=50 gapSizePct=400}}
           {{!-- END-SNIPPET --}}
         </div>
 
-        {{snippet-view-toggler class="u-mt-sm" snippetName="container-width-attribute.hbs"}}
+        {{snippet-view-toggler class="u-mt-sm" snippetName="line-width-attribute.hbs"}}
       </section>
     </section>
 
@@ -283,11 +283,11 @@
 
       <div class="dot-set dot-set--horizontal">
         {{!-- BEGIN-SNIPPET num-dots-attribute --}}
-        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gapSizePct=50 fill="#4da6e0"}}
-        {{divider-dots class="demo-dots" containerHeight="2.5rem" numDots=7}}
-        {{divider-dots class="demo-dots" containerHeight="3rem" justify="between" fill="#4da6e0"}}
-        {{divider-dots class="demo-dots" containerHeight="2.5rem" numDots=7}}
-        {{divider-dots class="demo-dots" containerHeight="2rem" numDots=22 gapSizePct=50 fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" lineHeight="2rem" numDots=22 gapSizePct=50 fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" lineHeight="2.5rem" numDots=7}}
+        {{divider-dots class="demo-dots" lineHeight="3rem" justify="between" fill="#4da6e0"}}
+        {{divider-dots class="demo-dots" lineHeight="2.5rem" numDots=7}}
+        {{divider-dots class="demo-dots" lineHeight="2rem" numDots=22 gapSizePct=50 fill="#4da6e0"}}
         {{!-- END-SNIPPET --}}
       </div>
 
