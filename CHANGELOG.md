@@ -1,3 +1,8 @@
+# May 8, 2017 &mdash; 0.0.6
+
+-   **[BREAKING CHANGE]** Change `containerWidth` and `containerHeight` to `lineWidth` and `lineHeight`, respectively ([#16](https://github.com/BrianSipple/ember-divider-dots/pull/16))
+
+
 # May 7, 2017 &mdash; 0.0.5
 
 -   **[BREAKING CHANGE]** Change `gutterSizePct` attribute to `gapSizePct` ([#15](https://github.com/BrianSipple/ember-divider-dots/pull/15))
