@@ -16,7 +16,7 @@ Platform:
 npm manifest: 
   {
     "name": "ember-divider-dots",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A customizable Ember component for rendering SVG section dividers",
     "keywords": [
       "ember-addon",
@@ -34,6 +34,9 @@ npm manifest:
       "test": "tests"
     },
     "repository": "https://github.com/BrianSipple/ember-divider-dots.git",
+    "bugs": {
+      "url": "https://github.com/BrianSipple/ember-divider-dots.git/issues"
+    },
     "scripts": {
       "build": "ember build",
       "start": "ember server",
@@ -60,7 +63,6 @@ npm manifest:
       "ember-cli-sri": "^2.1.0",
       "ember-cli-string-helpers": "^1.2.1",
       "ember-cli-uglify": "^1.2.0",
-      "ember-code-snippet": "^1.8.1",
       "ember-composable-helpers": "^2.0.1",
       "ember-disable-prototype-extensions": "^1.1.0",
       "ember-export-application-global": "^1.0.5",
@@ -69,6 +71,7 @@ npm manifest:
       "ember-resolver": "^2.0.3",
       "ember-sinon": "^0.7.0",
       "ember-source": "~2.12.0",
+      "ember-test-selectors": "^0.3.3",
       "ember-welcome-page": "^2.0.2",
       "loader.js": "^4.2.3",
       "postcss-cssnext": "^2.10.0",
@@ -2633,6 +2636,13 @@ Lockfile:
     dependencies:
       broccoli-sri-hash "^2.1.0"
   
+  ember-cli-string-helpers@^1.2.1:
+    version "1.2.1"
+    resolved "https://registry.yarnpkg.com/ember-cli-string-helpers/-/ember-cli-string-helpers-1.2.1.tgz#b557a0eb367cd386e0f43c4780e1513132997e9c"
+    dependencies:
+      broccoli-funnel "^1.0.1"
+      ember-cli-babel "^5.1.7"
+  
   ember-cli-string-utils@^1.0.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
@@ -2766,6 +2776,13 @@ Lockfile:
       es6-promise "^1.0.0"
       glob "^4.0.4"
       highlight.js "^9.5.0"
+  
+  ember-composable-helpers@^2.0.1:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/ember-composable-helpers/-/ember-composable-helpers-2.0.1.tgz#1568849ee176927fb73b0ed0a16e20b0ac90d774"
+    dependencies:
+      broccoli-funnel "^1.0.1"
+      ember-cli-babel "^5.1.7"
   
   ember-disable-prototype-extensions@^1.1.0:
     version "1.1.0"
@@ -8135,4 +8152,8 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
 Trace: 
-  Error: ENOTEMPTY: directory not empty, rmdir '/mnt/c/Users/brsip/ember-addons/ember-divider-dots-03/node_modules/astw/node_modules'
+  Error: https://registry.yarnpkg.com/ember-test-selectors: ETIMEDOUT
+      at Timeout._onTimeout (/usr/share/yarn/node_modules/request/request.js:852:19)
+      at ontimeout (timers.js:386:14)
+      at tryOnTimeout (timers.js:250:5)
+      at Timer.listOnTimeout (timers.js:214:5)

@@ -20,7 +20,7 @@
 
   /* 1 */
 
-  --spacing-md: calc(var(--base-spacing-unit));
+  --spacing-sm: calc(var(--base-spacing-unit));
 
   /* 2 */
 
@@ -29,8 +29,8 @@
     var(--common-ratio)
   );
 
-  --spacing-sm: calc(
-    var(--spacing-md) /
+  --spacing-md: calc(
+    var(--spacing-sm) *
     var(--common-ratio)
   );
 

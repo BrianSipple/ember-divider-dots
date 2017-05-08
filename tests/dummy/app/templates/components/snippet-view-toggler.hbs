@@ -1,0 +1,9 @@
+{{#view-toggler as |viewToggler|}}
+  <button class="c-snippet-view-toggler__button c-button" onClick={{viewToggler.onViewToggled}}>
+    Show Demo Snippet
+  </button>
+
+  {{#if viewToggler.isViewVisible}}
+    {{code-snippet class="c-snippet-view-toggler__snippet c-code-snippet" name=snippetName}}
+  {{/if}}
+{{/view-toggler}}
