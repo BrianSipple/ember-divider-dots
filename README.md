@@ -20,6 +20,8 @@ ember install ember-divider-dots
 
 ## Usage
 
+For usage tips _and_ visible examples, check out the [Ember Divider Dots demo app](https://briansipple.github.io/ember-divider-dots).
+
 ### Container Component Attributes
 -   `numDots`
     -     The number of dots to render as the divider.
@@ -73,9 +75,20 @@ ember install ember-divider-dots
     -     default: `center`
 
 ## Background
+Section divider "dots" are a common design pattern, and they can add a nice touch
+to long, content-heavy pages.
 
-Section dividers are a nice touch for many types of page layouts. However, there are also so many different ways to design them and even more (often-less-than-ideal) ways to implement those designs. 
+But implementing them is tough!
 
+There's a wide variety of ways to approach their markup and styling,
+and if you want to use SVG (good for you!), the calculus for sizing and positioning
+gets even more involved.
+
+And so as simple as they seem, divider dots are often overlooked.
+
+That's where Ember Divider Dots comes in. The addon provides an easy-to-use, easy-to-configure component that generates
+a line of "dots" as crisp SVGs wherever you choose to place it. Check out usage tips and examples
+below!
 
 ## Contributing
 
