@@ -63,15 +63,9 @@ body {
   line-height: 1;
 }
 
-.demo-page-divider {
-  color: var(--theme-color__supporting-1);
-  width: 100%;
-  height: 0.5rem;
-}
-
 .section-page-divider {
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .c-snippet-view-toggler .c-snippet-view-toggler__button {

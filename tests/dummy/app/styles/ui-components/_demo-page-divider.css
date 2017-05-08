@@ -1,0 +1,5 @@
+.c-demo-page-divider {
+  color: var(--theme-color__supporting-1);
+  width: 100%;
+  height: 1rem;
+}

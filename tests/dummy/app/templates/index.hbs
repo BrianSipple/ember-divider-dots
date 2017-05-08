@@ -2,7 +2,7 @@
   <h1 class="page-headline u-text-center g-primary u-m-0">Ember Divider Dots</h1>
 </header>
 
-{{divider-dots class="demo-page-divider u-mv-lg" numDots=8 gapSizePct=300}}
+{{demo-page-divider class="u-mv-lg"}}
 
 <article class="u-ph-lg">
   <section class="page-section u-mb-lg">
@@ -10,7 +10,11 @@
 
     <p>
       Section divider "dots" are a common design pattern, and they can add a nice touch
-      to long, content-heavy pages. But implementing them is tough.
+      to long, content-heavy pages.
+    </p>
+
+    <p>
+       But implementing them is tough!
     </p>
 
     <p>
@@ -56,7 +60,7 @@
         {{!-- END-SNIPPET --}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="basic-layout-horizontal-dots.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="basic-layout-horizontal-dots.hbs"}}
     </section>
 
     <section class="content-section">
@@ -78,11 +82,11 @@
         {{!-- END-SNIPPET --}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="basic-layout-vertical-dots.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="basic-layout-vertical-dots.hbs"}}
     </section>
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
+  {{demo-page-divider class="section-page-divider"}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Justification Types</h2>
@@ -98,7 +102,7 @@
         {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em" gapSizePct=75 justify="center"}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="justification-center.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="justification-center.hbs"}}
     </section>
 
     {{#each (array 'start' 'end' 'between') as |justification|}}
@@ -113,12 +117,12 @@
           {{divider-dots class="demo-dots demo-dots--bordered" direction="vertical" lineWidth="2em" justify=justification gapSizePct=75}}
         </div>
 
-        {{snippet-view-toggler class="u-mt-sm" snippetName=(concat "justification-" justification ".hbs")}}
+        {{snippet-view-toggler class="u-mt-md" snippetName=(concat "justification-" justification ".hbs")}}
       </section>
     {{/each}}
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
+  {{demo-page-divider class="section-page-divider"}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Dot Types</h2>
@@ -130,7 +134,7 @@
       {{divider-dots class="demo-dots" numDots=5 lineHeight="2em"}}
       {{!-- END-SNIPPET --}}
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="dot-type-circle.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="dot-type-circle.hbs"}}
     </section>
 
     <section class="content-section">
@@ -140,11 +144,11 @@
       {{divider-dots class="demo-dots" dotType="square" numDots=5 lineHeight="2em"}}
       {{!-- END-SNIPPET --}}
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="dot-type-square.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="dot-type-square.hbs"}}
     </section>
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
+  {{demo-page-divider class="section-page-divider"}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">SVG Attribute Binding</h2>
@@ -160,7 +164,7 @@
         {{!-- END-SNIPPET --}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="fill-attribute.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="fill-attribute.hbs"}}
     </section>
 
     <section class="content-section">
@@ -174,11 +178,11 @@
         {{!-- END-SNIPPET --}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="stroke-and-stroke-width-attributes.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="stroke-and-stroke-width-attributes.hbs"}}
     </section>
   </section>
 
-  {{divider-dots class="demo-page-divider section-page-divider" numDots=8 gapSizePct=300}}
+  {{demo-page-divider class="section-page-divider"}}
 
   <section class="page-section">
     <h2 class="section-heading g-primary">Other Styling Properties</h2>
@@ -192,7 +196,7 @@
         regardless of whether or not you know each dot's exact measure.
       </p>
 
-      <div class="dot-set dot-set--horizontal">
+      <div class="dot-set dot-set--horizontal u-mt-md">
         {{!-- BEGIN-SNIPPET gutter-size-pct-attribute --}}
         {{divider-dots class="demo-dots" numDots=5 lineHeight="2em"}}
         {{divider-dots class="demo-dots" numDots=5 lineHeight="2em" gapSizePct=250}}
@@ -201,7 +205,7 @@
         {{!-- END-SNIPPET --}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="gutter-size-pct-attribute.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="gutter-size-pct-attribute.hbs"}}
 
     </section>
 
@@ -224,7 +228,7 @@
         of their container.
       </p>
 
-      <div class="dot-set dot-set--horizontal">
+      <div class="dot-set dot-set--horizontal u-mt-md">
         {{!-- BEGIN-SNIPPET cross-size-pct-attribute --}}
         {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="6em" crossSizePct="23"}}
         {{divider-dots class="demo-dots demo-dots--bordered" numDots=5 lineHeight="2em" crossSizePct="40"}}
@@ -232,7 +236,7 @@
         {{!-- END-SNIPPET --}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="cross-size-pct-attribute.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="cross-size-pct-attribute.hbs"}}
     </section>
 
     <section class="content-section">
@@ -245,7 +249,7 @@
         also simply size the divider's root element with CSS, and let the cross size be filled automatically.
       </p>
 
-      <section class="content-section">
+      <section class="content-section  u-mt-md">
 
         <div class="dot-set dot-set--horizontal">
           {{!-- BEGIN-SNIPPET line-height-attribute --}}
@@ -255,7 +259,7 @@
           {{!-- END-SNIPPET --}}
         </div>
 
-        {{snippet-view-toggler class="u-mt-sm" snippetName="line-height-attribute.hbs"}}
+        {{snippet-view-toggler class="u-mt-md" snippetName="line-height-attribute.hbs"}}
       </section>
 
       <section class="content-section">
@@ -269,7 +273,7 @@
           {{!-- END-SNIPPET --}}
         </div>
 
-        {{snippet-view-toggler class="u-mt-sm" snippetName="line-width-attribute.hbs"}}
+        {{snippet-view-toggler class="u-mt-md" snippetName="line-width-attribute.hbs"}}
       </section>
     </section>
 
@@ -281,7 +285,11 @@
         gives you all the controls you need to make them fit.
       </p>
 
-      <div class="dot-set dot-set--horizontal">
+      <p>
+        (And, with SVG, responsive sizing is built-in. Try resizing your screen to see it in action!)
+      </p>
+
+      <div class="dot-set dot-set--horizontal u-mt-md">
         {{!-- BEGIN-SNIPPET num-dots-attribute --}}
         {{divider-dots class="demo-dots" lineHeight="2rem" numDots=22 gapSizePct=50 fill="#4da6e0"}}
         {{divider-dots class="demo-dots" lineHeight="2.5rem" numDots=7}}
@@ -291,7 +299,7 @@
         {{!-- END-SNIPPET --}}
       </div>
 
-      {{snippet-view-toggler class="u-mt-sm" snippetName="num-dots-attribute.hbs"}}
+      {{snippet-view-toggler class="u-mt-md" snippetName="num-dots-attribute.hbs"}}
     </section>
 
   </section>
