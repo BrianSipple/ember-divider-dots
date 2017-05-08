@@ -1,3 +1,8 @@
+# May 7, 2017 &mdash; 0.0.5
+
+-   **[BREAKING CHANGE]** Change `gutterSizePct` attribute to `gapSizePct` ([#15](https://github.com/BrianSipple/ember-divider-dots/pull/15))
+
+
 # May 7, 2017 &mdash; 0.0.4
 
 -   **[FEATURE]** Support for `fill`, `stroke`, & `stroke-width` attribute binding ([#14](https://github.com/BrianSipple/ember-divider-dots/pull/14))
