@@ -8,6 +8,7 @@ import { DIRECTION_HORIZONTAL, DIRECTION_VERTICAL } from 'ember-divider-dots/uti
 import { JUSTIFICATION_BETWEEN, JUSTIFICATION_CENTER, justifications } from 'ember-divider-dots/utils/justification';
 import { DOT_TYPE_CIRCLE, DOT_TYPE_SQUARE, dotTypes } from 'ember-divider-dots/utils/dot-types';
 import set from 'ember-metal/set';
+import range from 'ember-divider-dots/utils/range';
 
 export default Component.extend({
   layout,
@@ -288,6 +289,10 @@ export default Component.extend({
       });
     }
   }).readOnly(),
+
+  dotRange: computed('numDots', function() {
+    return range(1, this.get('numDots'));
+  }),
 
   registerDotComponent(dotComponent) {
     this.dotComponents.addObject(dotComponent);
