@@ -1,6 +1,6 @@
 {
   "name": "ember-divider-dots",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A customizable Ember component for rendering SVG section dividers",
   "keywords": [
     "ember-addon",

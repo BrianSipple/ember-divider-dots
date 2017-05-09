@@ -1,3 +1,8 @@
+# May 9, 2017 &mdash; 0.1.0
+
+-   Bump to `v0.1.0` to begin recommending usage 🚀🚀🚀.
+
+
 # May 9, 2017 &mdash; 0.0.8
 
 -   **[PATCH]** fix broken usage of unnecessary `range` template helper ([#20](https://github.com/BrianSipple/ember-divider-dots/pull/20))
