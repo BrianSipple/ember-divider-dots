@@ -1,8 +1,4 @@
-import { helper } from 'ember-helper';
-
-export function range(params = []) {
-  const [a, b] = params;
-
+export default function range(a, b) {
   // Allow a single argument to be treated a range from 0 to n
   const start = typeof b === 'undefined' ? 0 : a;
   const end = typeof b === 'undefined' ? a : b;
@@ -11,5 +7,3 @@ export function range(params = []) {
 
   return Array.from({ length: size }, (_, idx) => start + idx);
 }
-
-export default helper(range);
