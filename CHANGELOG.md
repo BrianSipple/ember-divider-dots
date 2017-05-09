@@ -1,3 +1,8 @@
+# May 8, 2017 &mdash; 0.0.7
+
+-   **[ENHANCEMENT]** Update project to Ember & Ember CLI 2.13 ([#19](https://github.com/BrianSipple/ember-divider-dots/pull/19))
+
+
 # May 8, 2017 &mdash; 0.0.6
 
 -   **[BREAKING CHANGE]** Change `containerWidth` and `containerHeight` to `lineWidth` and `lineHeight`, respectively ([#16](https://github.com/BrianSipple/ember-divider-dots/pull/16))
