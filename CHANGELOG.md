@@ -1,4 +1,4 @@
-# May 8, 2017 &mdash; 0.0.7
+# May 9, 2017 &mdash; 0.0.7
 
 -   **[ENHANCEMENT]** Update project to Ember & Ember CLI 2.13 ([#19](https://github.com/BrianSipple/ember-divider-dots/pull/19))
 
