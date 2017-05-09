@@ -4,8 +4,8 @@ _A customizable Ember component for rendering SVG section dividers._
 
 [![Latest NPM release][npm-badge]][npm-badge-url]
 [![CircleCI Build Status][circle-badge]][circle-badge-url]
-[![Test Coverage][coverage-badge]][coverage-badge-url]
-[![Code Climate][codeclimate-badge]][codeclimate-badge-url]
+<!--[![Test Coverage][coverage-badge]][coverage-badge-url]-->
+<!--[![Code Climate][codeclimate-badge]][codeclimate-badge-url]-->
 [![Ember Observer Score][ember-observer-badge]][ember-observer-badge-url]
 [![License][license-badge]][license-badge-url]
 [![Dependencies][dependencies-badge]][dependencies-badge-url]
@@ -24,55 +24,55 @@ For usage tips _and_ visible examples, check out the [Ember Divider Dots demo ap
 
 ### Container Component Attributes
 -   `numDots`
-    -     The number of dots to render as the divider.
-    -     type: `Integer`
-    -     default: `4`
+    -   The number of dots to render as the divider.
+    -   type: `Integer`
+    -   default: `4`
 
 -   `lineWidth`
-    -     A value accepted by the SVG `width` attribute.
-    -     type: `String`
-    -     default: `'100%'`
+    -   A value accepted by the SVG `width` attribute.
+    -   type: `String`
+    -   default: `'100%'`
 
 -   `lineHeight`
-    -     A value accepted by the SVG `height` attribute.
-    -     type: `String`
-    -     default: `'100%'`
+    -   A value accepted by the SVG `height` attribute.
+    -   type: `String`
+    -   default: `'100%'`
 
 -   `direction`
-    -     Layout direction of the dots (AKA "flow" direction).
-    -     type: `String`
-    -     options: `horizontal`, `vertical`
-    -     default: `horizontal`
+    -   Layout direction of the dots (AKA "flow" direction).
+    -   type: `String`
+    -   options: `horizontal`, `vertical`
+    -   default: `horizontal`
 
 -   `dotType`
-    -     The type of SVG to render as a "dot" (see the [demo page] for visual representations).
-    -     type: `String`
-    -     options: `circle`, `square`
-    -     default: `circle`
+    -   The type of SVG to render as a "dot" (see the [demo page] for visual representations).
+    -   type: `String`
+    -   options: `circle`, `square`
+    -   default: `circle`
 
 -   `crossSizePct`
-    -     The size of each dot as a percentage of the cross size ("cross size" being the amount of space in the direction opposite the layout direction)
-    -     type: `Number`
-    -     default: `100`
+    -   The size of each dot as a percentage of the cross size ("cross size" being the amount of space in the direction opposite the layout direction)
+    -   type: `Number`
+    -   default: `100`
 
 -   `gapSizePct`
-    -     The size of each gutter (the space between two dots), given as a percentage of the `dotSize`.
+    -   The size of each gutter (the space between two dots), given as a percentage of the `dotSize`.
           
           **Note**: This will have no effect when `justify` is set to `between`, as the gutter space will be automatically distributed.
 
-    -     type: `Number`
-    -     default: `125`
+    -   type: `Number`
+    -   default: `125`
 
 -   `fill`
-    -     Binding for the SVG `fill` attribute.
-    -     type: `String`
-    -     default: `currentColor`
+    -   Binding for the SVG `fill` attribute.
+    -   type: `String`
+    -   default: `currentColor`
 
 -   `justify`
-    -     The alignment of each dot along its main axis.
-    -     options: `start`, `center`, `end`, `between`
-    -     type: `String`
-    -     default: `center`
+    -   The alignment of each dot along its main axis.
+    -   options: `start`, `center`, `end`, `between`
+    -   type: `String`
+    -   default: `center`
 
 ## Background
 Section divider "dots" are a common design pattern, and they can add a nice touch
@@ -87,8 +87,7 @@ gets even more involved.
 And so as simple as they seem, divider dots are often overlooked.
 
 That's where Ember Divider Dots comes in. The addon provides an easy-to-use, easy-to-configure component that generates
-a line of "dots" as crisp SVGs wherever you choose to place it. Check out usage tips and examples
-below!
+a line of "dots" as crisp SVGs wherever you choose to place it.
 
 ## Contributing
 
@@ -119,8 +118,6 @@ If you have a request for a new dot type, please feel free to [open up an issue]
 #### Building
 
 -   `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
 
 [npm-badge]: https://img.shields.io/npm/v/ember-divider-dots.svg
