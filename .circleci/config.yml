@@ -1,0 +1,59 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/ember-divider-dots
+
+    docker:
+      - image: node:boron
+      - image: selenium/standalone-chrome
+        env:
+          - DISPLAY=:99
+          - CHROME_BIN=/usr/bin/google-chrome
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: ember-divider-dots-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Enable Bower Usage
+          command: >
+            echo '{ "allow_root": true }' > ~/ember-divider-dots/.bowerrc
+
+      - run:
+          name: Install Google Chrome
+          command: |
+            wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+            sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+            apt-get update
+            apt-get install -y google-chrome-stable
+
+      - run:
+          name: Install Xvfb
+          command: apt-get install -y xvfb
+
+      - run:
+          name: Disable Sandboxing in Chrome
+          command: |
+            sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox --no-sandbox|g' "/opt/google/chrome/google-chrome"
+
+      - run:
+          name: System information
+          command: |
+            echo "Node $(node -v)"
+            echo "Yarn v$(yarn --version)"
+
+      - run:
+          name: Install dependencies
+          command: yarn
+
+      - run:
+          name: Run Tests
+          command: xvfb-run -a yarn test
+
+      - save_cache:
+          key: ember-divider-dots-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/ember-divider-dots/node_modules
+            - ~/.cache/yarn/
