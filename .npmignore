@@ -10,7 +10,7 @@
 .gitignore
 .eslintrc.js
 .watchmanconfig
-circle.yml
+.circleci/
 bower.json
 ember-cli-build.js
 testem.js
